@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { calculateEMI, calculatePrepaymentSaving } from '@/lib/calc';
 import { formatCurrency, formatNumber, downloadPDF } from '@/lib/utils';
 import SliderInput from './calc/SliderInput';
+import TrustBar from './calc/TrustBar';
 import {
   CalcBreadcrumb,
   CalcContent,
@@ -105,6 +106,15 @@ export default function EMICalculator() {
           monthly prepayment would save you.
         </p>
       </header>
+
+      <TrustBar
+        updated='2026-07-25'
+        note="EMI uses the reducing-balance method mandated for retail loans in India. Interest rates shown in presets are indicative — check your lender's current card rate."
+        sources={[
+            { label: 'RBI – Interest Rate Rules', href: 'https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx' },
+            { label: 'Income Tax Act Sec 24(b)', href: 'https://incometaxindia.gov.in/' },
+        ]}
+      />
 
       {/* Loan type presets */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">

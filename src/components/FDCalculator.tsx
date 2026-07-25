@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { calculateFD, calculateRD } from '@/lib/calc';
 import { formatCurrency, formatNumber, downloadPDF } from '@/lib/utils';
 import SliderInput from './calc/SliderInput';
+import TrustBar from './calc/TrustBar';
 import {
   CalcBreadcrumb,
   CalcContent,
@@ -97,6 +98,15 @@ export default function FDCalculator() {
           FD calculators quietly ignore.
         </p>
       </header>
+
+      <TrustBar
+        updated='2026-07-25'
+        note='Banks compound FD interest quarterly. TDS of 10% applies once interest crosses Rs 50,000 a year (Rs 1 lakh for senior citizens).'
+        sources={[
+            { label: 'RBI – Deposit Rates', href: 'https://www.rbi.org.in/' },
+            { label: 'Income Tax – TDS on Interest', href: 'https://www.incometax.gov.in/iec/foportal/' },
+        ]}
+      />
 
       {/* FD / RD switch */}
       <div className="grid grid-cols-2 gap-3 max-w-md">

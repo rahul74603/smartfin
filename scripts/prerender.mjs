@@ -263,7 +263,15 @@ for (const route of allRoutes) {
           height: 192,
         },
       },
+      // YMYL/E-E-A-T: state who produced and last checked the figures.
+      author: { '@type': 'Person', name: 'Rahul Kumar', url: `${BASE_URL}/about` },
+      reviewedBy: { '@type': 'Person', name: 'Rahul Kumar', url: `${BASE_URL}/about` },
       dateModified: today,
+      lastReviewed: today,
+      ...(isCalc && {
+        isAccessibleForFree: true,
+        creator: { '@type': 'Organization', name: 'SmartFintool', url: BASE_URL },
+      }),
     } });
 
     if (seo.faqs?.length) {

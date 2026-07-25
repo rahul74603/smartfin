@@ -50,8 +50,24 @@ export default defineConfig(({ command }) => ({
           if (id.includes('react-router')) return 'router'
           if (id.includes('chart.js') || id.includes('react-chartjs-2')) return 'charts'
           if (id.includes('recharts') || id.includes('d3-')) return 'recharts'
-          if (id.includes('jspdf') || id.includes('html2canvas') || id.includes('dompurify')) {
-            return 'pdf'
+          /**
+           * The PDF stack (jspdf, html2canvas, canvg, dompurify …) must fall
+           * through WITHOUT being assigned a name.
+           *
+           * Returning a name puts it in the static graph and Vite emits a
+           * modulepreload for ~550 kB on every page. But letting it reach the
+           * `return 'vendor'` catch-all at the bottom is just as bad, because
+           * vendor IS preloaded. Returning undefined here leaves it in the
+           * async chunk that the import() in lib/pdf.ts creates, so it is
+           * fetched only when someone clicks "Download as PDF".
+           */
+          if (
+            id.includes('jspdf') || id.includes('html2canvas') ||
+            id.includes('dompurify') || id.includes('canvg') ||
+            id.includes('rgbcolor') || id.includes('stackblur') ||
+            id.includes('fflate') || id.includes('/raf/')
+          ) {
+            return undefined
           }
           if (id.includes('firebase') || id.includes('@firebase')) return 'firebase'
           if (id.includes('@radix-ui')) return 'radix'

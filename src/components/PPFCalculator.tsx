@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { calculatePPF } from '@/lib/calc';
 import { formatCurrency, formatNumber, downloadPDF } from '@/lib/utils';
 import SliderInput from './calc/SliderInput';
+import TrustBar from './calc/TrustBar';
 import {
   CalcBreadcrumb,
   CalcContent,
@@ -94,6 +95,15 @@ export default function PPFCalculator() {
           deposit timing changes the outcome.
         </p>
       </header>
+
+      <TrustBar
+        updated='2026-07-25'
+        note='PPF rate of 7.1% applies to the July-September 2026 quarter. The Ministry of Finance reviews small savings rates every quarter.'
+        sources={[
+            { label: 'Ministry of Finance – Small Savings', href: 'https://www.dea.gov.in/' },
+            { label: 'India Post – PPF Scheme', href: 'https://www.indiapost.gov.in/Financial/Pages/Content/Post-Office-Saving-Schemes.aspx' },
+        ]}
+      />
 
       <div className="grid lg:grid-cols-2 gap-8">
         <div className="rounded-[2.5rem] bg-white border border-slate-100 shadow-xl p-6 sm:p-8 space-y-7">

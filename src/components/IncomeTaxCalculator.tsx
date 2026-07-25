@@ -5,6 +5,7 @@ import { Switch } from '@/components/ui/switch';
 import { calculateIncomeTax } from '@/lib/calc';
 import { formatCurrency, formatNumber, downloadPDF } from '@/lib/utils';
 import SliderInput from './calc/SliderInput';
+import TrustBar from './calc/TrustBar';
 import {
   CalcBreadcrumb,
   CalcContent,
@@ -100,6 +101,15 @@ export default function IncomeTaxCalculator() {
           marginal relief, and 4% cess.
         </p>
       </header>
+
+      <TrustBar
+        updated='2026-07-25'
+        note='Slabs, the Rs 75,000 standard deduction and the Rs 60,000 Section 87A rebate reflect FY 2026-27 (AY 2027-28). Budget 2026 announced no changes to rates.'
+        sources={[
+            { label: 'Income Tax Department', href: 'https://www.incometax.gov.in/iec/foportal/' },
+            { label: 'Budget 2026 – Slab Rates', href: 'https://www.indiabudget.gov.in/' },
+        ]}
+      />
 
       <div className="grid lg:grid-cols-2 gap-8">
         {/* ── Inputs ── */}

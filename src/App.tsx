@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Calculator,
@@ -33,7 +33,15 @@ import About from './pages/About';
 import Disclaimer from './pages/Disclaimer';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
-import AdminPanel from './pages/AdminPanel';
+/**
+ * Admin panel is lazy-loaded.
+ *
+ * It is the only consumer of Firebase Auth (94 kB). A static import put that
+ * into the shared bundle, so every visitor to a calculator page downloaded the
+ * whole auth SDK for a route they will never open. The page is noindex anyway,
+ * so there is no SEO cost to code-splitting it.
+ */
+const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 import Resources from './pages/Resources';
 import Comparisons from './pages/Comparisons';
 import { NotFoundPage } from './components/Pages';
@@ -553,7 +561,15 @@ function App() {
         /* Admin */
         ) : isAdminPage ? (
           <div className="max-w-6xl mx-auto">
-            <AdminPanel />
+            <Suspense
+              fallback={
+                <div className="py-24 text-center text-sm font-bold text-slate-400">
+                  Loading admin…
+                </div>
+              }
+            >
+              <AdminPanel />
+            </Suspense>
           </div>
 
         /* Standalone tools */

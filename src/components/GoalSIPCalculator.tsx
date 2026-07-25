@@ -16,6 +16,7 @@ import { Switch } from '@/components/ui/switch';
 import { requiredSIP, requiredStepUpSIP, stepUpSIPFutureValue, realValue } from '@/lib/calc';
 import { formatCurrency, formatNumber, downloadPDF } from '@/lib/utils';
 import SliderInput from './calc/SliderInput';
+import TrustBar from './calc/TrustBar';
 import {
   CalcBreadcrumb,
   CalcContent,
@@ -125,6 +126,15 @@ export default function GoalSIPCalculator() {
           inflation adjustment built in.
         </p>
       </header>
+
+      <TrustBar
+        updated='2026-07-25'
+        note='Return assumptions are illustrative, not guaranteed. Equity mutual funds are subject to market risk; past performance does not indicate future results.'
+        sources={[
+            { label: 'AMFI – Mutual Fund Data', href: 'https://www.amfiindia.com/' },
+            { label: 'SEBI – Investor Education', href: 'https://investor.sebi.gov.in/' },
+        ]}
+      />
 
       {/* Goal presets */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
