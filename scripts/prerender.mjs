@@ -385,6 +385,26 @@ for (const route of allRoutes) {
   // reads as boilerplate to Google. Prerendered HTML makes it redundant.
   html = html.replace(/<noscript>[\s\S]*?<\/noscript>\s*/i, '');
 
+  /**
+   * Strip React's aborted-Suspense debug templates.
+   *
+   * The chart components are lazy() + <Suspense>, and renderToString cannot
+   * suspend. React handles that by emitting a <template data-msg="..."
+   * data-cstck="..."> placeholder containing the full warning text and a stack
+   * trace — including absolute build-machine paths like
+   * file:///home/user/smartfin/dist-ssr/entry-server.js.
+   *
+   * Shipping that is bad on three counts: it leaks local filesystem paths,
+   * it adds several KB of noise to the HTML Googlebot parses, and the text
+   * reads like an error message on an otherwise polished page.
+   *
+   * Dropping it is safe. The charts hold no crawlable text (they paint to a
+   * <canvas>), the surrounding <!--$!--> markers tell React the boundary
+   * needs client rendering, and hydration re-mounts them normally.
+   */
+  html = html.replace(/<template data-msg="[\s\S]*?"><\/template>/g, '');
+  html = html.replace(/<template data-msg="[\s\S]*?"\/>/g, '');
+
   // ── Write ────────────────────────────────────────────────────────────────
   const outPath =
     url === '/'
