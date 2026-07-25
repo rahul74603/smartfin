@@ -8,21 +8,30 @@
  * Run with: npm run test:calc
  */
 
-import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import * as esbuild from 'esbuild';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const outDir = path.join(root, '.calc-test');
 
 // Compile the TS module to plain JS so Node can import it.
+//
+// Uses the esbuild JS API rather than shelling out to `npx esbuild`. The shell
+// version broke on any checkout path containing a space (e.g.
+// "C:\\Users\\...\\HDD RECOVERD PROJECTS\\fintool") because the unquoted
+// --outfile argument was split into multiple input files.
 fs.mkdirSync(outDir, { recursive: true });
-execSync(
-  `npx esbuild src/lib/calc.ts --bundle --format=esm --platform=node --outfile=${path.join(outDir, 'calc.mjs')}`,
-  { cwd: root, stdio: 'pipe' }
-);
+await esbuild.build({
+  entryPoints: [path.join(root, 'src', 'lib', 'calc.ts')],
+  outfile: path.join(outDir, 'calc.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'node',
+  logLevel: 'silent',
+});
 
 const calc = await import(pathToFileURL(path.join(outDir, 'calc.mjs')).href);
 
@@ -253,4 +262,8 @@ fs.rmSync(outDir, { recursive: true, force: true });
 
 console.log(`\n${'─'.repeat(60)}`);
 console.log(fail === 0 ? `✅ All ${pass} assertions passed` : `❌ ${fail} failed, ${pass} passed`);
-process.exit(fail === 0 ? 1 * 0 + (fail ? 1 : 0) : 0);
+
+// Non-zero on failure so CI and `npm run` actually surface a broken formula.
+// The previous expression always evaluated to 0, meaning a failing suite
+// still reported success.
+process.exit(fail === 0 ? 0 : 1);
