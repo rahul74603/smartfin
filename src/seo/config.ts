@@ -502,7 +502,217 @@ export const seoByRoute: Record<string, SEOEntry> = {
       },
     ],
   },
+
+  // ───────────────────────────────────────────────────────────────────────────
+  // Standalone high-intent tools
+  // ───────────────────────────────────────────────────────────────────────────
+
+  emi: {
+    title: 'EMI Calculator 2026 – Home, Car & Personal Loan EMI',
+    description:
+      'Free EMI calculator for home, car, personal and education loans. Get your monthly EMI, total interest, full amortisation schedule and see how much prepayment saves you.',
+    keywords:
+      'emi calculator, home loan emi calculator, car loan emi calculator, personal loan emi calculator, loan emi calculator india, emi calculator with prepayment, amortisation schedule calculator, education loan emi calculator',
+    canonicalPath: '/emi',
+    faqs: [
+      {
+        question: 'How is EMI calculated on a loan?',
+        answer:
+          'EMI = P x r x (1+r)^n / ((1+r)^n - 1), where P is the loan amount, r is the monthly interest rate and n the tenure in months. Every Indian bank uses this reducing-balance method, charging interest only on the outstanding balance.',
+      },
+      {
+        question: 'What is a good EMI to income ratio?',
+        answer:
+          'Most Indian lenders cap total EMIs at 50-55% of net monthly income and prefer 40% or below. Keeping a home loan EMI under 35-40% of take-home pay leaves room for SIP investments and an emergency fund.',
+      },
+      {
+        question: 'How much does prepaying a home loan save?',
+        answer:
+          'On a Rs 50 lakh, 20-year loan at 8.5%, paying just Rs 5,000 extra every month clears the loan about 4 years 5 months early and saves over Rs 13.8 lakh in interest, because interest is front-loaded in the early years.',
+      },
+      {
+        question: 'Should I reduce EMI or tenure when prepaying?',
+        answer:
+          'Reducing the tenure saves far more interest because you stop paying interest sooner. Reducing the EMI only improves monthly cash flow. Choose tenure reduction unless your budget is genuinely strained.',
+      },
+      {
+        question: 'Why is most of my early EMI going to interest?',
+        answer:
+          'Interest is charged on the outstanding balance, which is highest at the start. In year one of a 20-year home loan roughly 80% of each EMI is interest, and the principal share rises every month.',
+      },
+      {
+        question: 'Is home loan EMI eligible for tax deduction?',
+        answer:
+          'Under the old tax regime, interest on a self-occupied home is deductible up to Rs 2 lakh under Section 24(b) and principal repayment counts towards the Rs 1.5 lakh Section 80C limit. The new regime allows neither.',
+      },
+    ],
+  },
+
+  'income-tax': {
+    title: 'Income Tax Calculator FY 2026-27 – New vs Old Regime',
+    description:
+      'Calculate income tax for FY 2026-27 (AY 2027-28) with Budget 2026 slabs. Compare new vs old regime, standard deduction, Section 87A rebate, surcharge and 4% cess instantly.',
+    keywords:
+      'income tax calculator, income tax calculator fy 2026-27, new vs old tax regime calculator, income tax slab 2026, tax calculator india, section 87a rebate calculator, ay 2027-28 tax calculator, salary tax calculator india',
+    canonicalPath: '/income-tax',
+    faqs: [
+      {
+        question: 'Is income up to Rs 12 lakh tax-free in FY 2026-27?',
+        answer:
+          'Yes, for resident individuals under the new regime. Tax on Rs 12 lakh taxable income is Rs 60,000 and the Section 87A rebate of up to Rs 60,000 cancels it entirely. With the Rs 75,000 standard deduction, a salary up to Rs 12.75 lakh is tax-free.',
+      },
+      {
+        question: 'What are the new regime tax slabs for FY 2026-27?',
+        answer:
+          'Up to Rs 4 lakh nil, Rs 4-8 lakh 5%, Rs 8-12 lakh 10%, Rs 12-16 lakh 15%, Rs 16-20 lakh 20%, Rs 20-24 lakh 25%, and 30% above Rs 24 lakh. Budget 2026 made no changes to these rates.',
+      },
+      {
+        question: 'Which tax regime is better, old or new?',
+        answer:
+          'The new regime suits most salaried people because of wider slabs and a Rs 75,000 standard deduction. The old regime only wins once total deductions such as 80C, 80D, HRA and home loan interest exceed roughly Rs 3.5 to 4 lakh.',
+      },
+      {
+        question: 'What is the standard deduction for FY 2026-27?',
+        answer:
+          'Rs 75,000 under the new regime and Rs 50,000 under the old regime. It is available only to salaried individuals and pensioners, not to business or professional income.',
+      },
+      {
+        question: 'Do senior citizens get a higher exemption in the new regime?',
+        answer:
+          'No. The new regime applies the same Rs 4 lakh basic exemption to everyone. Higher exemptions of Rs 3 lakh for ages 60-80 and Rs 5 lakh for 80+ apply only under the old regime.',
+      },
+      {
+        question: 'Which deductions are allowed in the new tax regime?',
+        answer:
+          'Mainly the Rs 75,000 standard deduction and Section 80CCD(2) employer NPS contribution up to 14% of basic salary. Section 80C, 80D, HRA and self-occupied home loan interest are all disallowed.',
+      },
+    ],
+  },
+
+  ppf: {
+    title: 'PPF Calculator 2026 – Public Provident Fund Maturity',
+    description:
+      'Calculate PPF maturity at the current 7.1% rate with year-wise breakdown. See tax-free interest earned, 15-year and extended tenure projections, and the best deposit timing.',
+    keywords:
+      'ppf calculator, ppf calculator 2026, public provident fund calculator, ppf maturity calculator, ppf interest rate 2026, ppf calculator 15 years, ppf 1.5 lakh per year maturity, ppf vs epf vs nps',
+    canonicalPath: '/ppf',
+    faqs: [
+      {
+        question: 'What is the current PPF interest rate?',
+        answer:
+          'PPF pays 7.1% per annum, unchanged for the July-September 2026 quarter. The Ministry of Finance reviews the rate quarterly, but it has stayed at 7.1% since January 2023.',
+      },
+      {
+        question: 'How much will Rs 1.5 lakh per year in PPF grow to in 15 years?',
+        answer:
+          'Depositing the full Rs 1.5 lakh limit every year for 15 years at 7.1% gives a maturity of roughly Rs 40.68 lakh, of which Rs 22.5 lakh is your deposit and about Rs 18.18 lakh is tax-free interest.',
+      },
+      {
+        question: 'Is PPF interest tax-free?',
+        answer:
+          'Yes. PPF has EEE status: the deposit qualifies for Section 80C under the old regime, the annual interest is tax-free and the maturity is tax-free. That makes 7.1% equivalent to about 10.1% pre-tax in the 30% bracket.',
+      },
+      {
+        question: 'When should I deposit to earn maximum PPF interest?',
+        answer:
+          'Before the 5th of April. PPF interest is calculated on the lowest balance between the 5th and the last day of each month, so a lump sum deposited in early April earns interest for all twelve months.',
+      },
+      {
+        question: 'Can I withdraw from PPF before 15 years?',
+        answer:
+          'Partial withdrawal is allowed from the 7th financial year, capped at the lower of 50% of the balance at the end of the 4th preceding year or the previous year balance. A loan facility exists between years 3 and 6.',
+      },
+      {
+        question: 'What happens after PPF matures at 15 years?',
+        answer:
+          'You can withdraw the entire amount tax-free or extend in blocks of 5 years indefinitely, with or without further contributions. In both cases the balance continues to earn interest.',
+      },
+    ],
+  },
+
+  fd: {
+    title: 'FD Calculator 2026 – Fixed & Recurring Deposit Returns',
+    description:
+      'Calculate FD and RD maturity with quarterly compounding as Indian banks do. See interest earned, TDS impact and your real post-tax return at every income slab.',
+    keywords:
+      'fd calculator, fixed deposit calculator, rd calculator, recurring deposit calculator, fd maturity calculator india, fd interest calculator, post tax fd return calculator, fd vs ppf',
+    canonicalPath: '/fd',
+    faqs: [
+      {
+        question: 'How is FD maturity calculated?',
+        answer:
+          'Indian banks compound FD interest quarterly using A = P(1 + r/n)^(nt), where n is 4. For example Rs 1 lakh at 7% for 5 years matures at about Rs 1,41,478.',
+      },
+      {
+        question: 'Is FD interest taxable in India?',
+        answer:
+          'Yes, fully. FD interest is added to your income and taxed at your slab rate, so a 7% FD nets only about 4.9% for someone in the 30% bracket. Banks deduct 10% TDS once interest crosses Rs 50,000 a year.',
+      },
+      {
+        question: 'What is the difference between FD and RD?',
+        answer:
+          'An FD is a single lump-sum deposit locked for a fixed term. An RD lets you deposit monthly. For the same rate and period an FD earns more because the full principal compounds from day one.',
+      },
+      {
+        question: 'Do senior citizens get higher FD rates?',
+        answer:
+          'Yes, most banks pay senior citizens 0.25% to 0.75% extra, and their TDS threshold is Rs 1 lakh instead of Rs 50,000.',
+      },
+      {
+        question: 'Is a 5-year tax-saving FD worth it?',
+        answer:
+          'It qualifies for Section 80C but only under the old regime, has a hard 5-year lock-in and the interest is still fully taxable. PPF at 7.1% tax-free is usually a better 80C choice.',
+      },
+      {
+        question: 'What happens if I break an FD early?',
+        answer:
+          'Banks charge a penalty of typically 0.5% to 1% and pay interest at the rate applicable for the period actually completed, not the originally booked rate.',
+      },
+    ],
+  },
+
+  'goal-sip': {
+    title: 'Goal SIP Calculator – How Much SIP For Your Target?',
+    description:
+      'Reverse SIP calculator: enter your goal amount and timeline to get the exact monthly SIP required. Includes step-up SIP, existing savings and inflation adjustment.',
+    keywords:
+      'goal sip calculator, reverse sip calculator, how much sip for 1 crore, step up sip calculator, sip required for goal, target sip calculator india, child education sip calculator, retirement sip calculator',
+    canonicalPath: '/goal-sip',
+    faqs: [
+      {
+        question: 'How much SIP do I need for 1 crore in 15 years?',
+        answer:
+          'At a 12% expected return you need roughly Rs 19,800 per month for 15 years. Total invested would be about Rs 35.6 lakh, with the remaining Rs 64 lakh coming from compounding.',
+      },
+      {
+        question: 'What is a step-up SIP?',
+        answer:
+          'A step-up SIP increases your monthly investment by a fixed percentage every year, usually matching your salary hike. Starting at Rs 10,000 with a 10% annual step-up substantially beats a flat Rs 10,000 SIP over 15 years.',
+      },
+      {
+        question: 'What return rate should I assume for SIP planning?',
+        answer:
+          'Use 10-12% for a diversified equity mutual fund portfolio over 10 or more years. Use 8% for a conservative plan. Never assume above 15%, as planning on an optimistic rate means under-saving for the actual goal.',
+      },
+      {
+        question: 'Why should I adjust my goal for inflation?',
+        answer:
+          'Rs 1 crore in 20 years has the purchasing power of roughly Rs 31 lakh today at 6% inflation. For goals like child education or retirement, target the inflation-adjusted amount rather than a number that sounds large today.',
+      },
+      {
+        question: 'What if I cannot afford the required SIP?',
+        answer:
+          'You have four levers: extend the horizon, lower the target, accept more equity risk for a higher return, or start smaller with a step-up SIP. Extending the horizon is the most powerful because compounding is exponential in time.',
+      },
+      {
+        question: 'Does doubling the time horizon halve the required SIP?',
+        answer:
+          'No, it reduces it by roughly four times. Rs 1 crore in 10 years needs about Rs 43,000 a month, but in 20 years only about Rs 10,000. This is why starting early matters more than starting big.',
+      },
+    ],
+  },
 };
+
 
 export const calculatorSEOContent: Record<string, SEOCopy> = {
   sip: {
@@ -572,6 +782,11 @@ export const breadcrumbLabels: Record<string, string> = {
   'privacy-policy': 'Privacy Policy',
   terms: 'Terms of Service',
   disclaimer: 'Financial Disclaimer',
+  emi: 'EMI Calculator',
+  'income-tax': 'Income Tax Calculator',
+  ppf: 'PPF Calculator',
+  fd: 'FD & RD Calculator',
+  'goal-sip': 'Goal SIP Planner',
   resources: 'Financial Resources',
   comparisons: 'Investment Comparisons',
   admin: 'Admin Panel',

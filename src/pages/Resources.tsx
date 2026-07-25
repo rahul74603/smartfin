@@ -266,6 +266,36 @@ const calculatorLinks = [
     icon: <PieChart className="w-5 h-5 text-emerald-600" />,
     text: 'Understand power of compounding with different frequencies.',
   },
+  {
+    label: 'EMI Calculator',
+    href: '/emi',
+    icon: <Target className="w-5 h-5 text-rose-600" />,
+    text: 'Home, car and personal loan EMI with prepayment savings.',
+  },
+  {
+    label: 'Income Tax Calculator',
+    href: '/income-tax',
+    icon: <Target className="w-5 h-5 text-amber-600" />,
+    text: 'Compare new vs old regime for FY 2026-27 instantly.',
+  },
+  {
+    label: 'PPF Calculator',
+    href: '/ppf',
+    icon: <Target className="w-5 h-5 text-emerald-600" />,
+    text: 'Public Provident Fund maturity at the current 7.1% rate.',
+  },
+  {
+    label: 'FD & RD Calculator',
+    href: '/fd',
+    icon: <Target className="w-5 h-5 text-blue-600" />,
+    text: 'Deposit maturity with the post-tax return most tools omit.',
+  },
+  {
+    label: 'Goal SIP Planner',
+    href: '/goal-sip',
+    icon: <Target className="w-5 h-5 text-purple-600" />,
+    text: 'Work backwards from your goal to the monthly SIP required.',
+  },
 ];
 
 const resourceFaqs = [

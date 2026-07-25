@@ -31,6 +31,36 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://smartfintool.com/emi</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://smartfintool.com/income-tax</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://smartfintool.com/ppf</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://smartfintool.com/fd</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://smartfintool.com/goal-sip</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://smartfintool.com/resources</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>

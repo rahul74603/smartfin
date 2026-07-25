@@ -23,6 +23,11 @@ import SWPCalculator from './components/SWPCalculator';
 import CompoundInterestCalculator from './components/CompoundInterestCalculator';
 import SimpleInterestCalculator from './components/SimpleInterestCalculator';
 import LumpsumCalculator from './components/LumpsumCalculator';
+import EMICalculator from './components/EMICalculator';
+import IncomeTaxCalculator from './components/IncomeTaxCalculator';
+import PPFCalculator from './components/PPFCalculator';
+import FDCalculator from './components/FDCalculator';
+import GoalSIPCalculator from './components/GoalSIPCalculator';
 
 import About from './pages/About';
 import Disclaimer from './pages/Disclaimer';
@@ -72,6 +77,21 @@ const calcMeta: Record<
     label: 'Lumpsum Calculator',
   },
 };
+
+/**
+ * Standalone tools shown in the header and footer.
+ *
+ * `short` is used in the cramped desktop header, `label` everywhere else.
+ * Keeping one table means the header, footer and any future menu cannot drift
+ * out of sync.
+ */
+const TOOL_NAV = [
+  { path: '/emi', short: 'EMI', label: 'EMI Calculator' },
+  { path: '/income-tax', short: 'Tax', label: 'Income Tax Calculator' },
+  { path: '/ppf', short: 'PPF', label: 'PPF Calculator' },
+  { path: '/fd', short: 'FD', label: 'FD & RD Calculator' },
+  { path: '/goal-sip', short: 'Goal', label: 'Goal SIP Planner' },
+];
 
 // ─── Mobile Nav Icons ─────────────────────────────────────────────────────────
 const mobileNavIcon: Record<string, React.ReactNode> = {
@@ -171,11 +191,18 @@ function App() {
   // ── Route Classification ────────────────────────────────────────────────────
   const infoPages = ['about', 'privacy-policy', 'terms', 'disclaimer'];
   const coreCalculators = ['sip', 'swp', 'compound', 'simple', 'lumpsum'];
+  /**
+   * Standalone tools. These render as their own page (own H1 area, FAQ and
+   * related-links cluster) instead of inside the five-tab hero, because each
+   * one targets a distinct high-volume query and needs its own long-form copy.
+   */
+  const toolPages = ['emi', 'income-tax', 'ppf', 'fd', 'goal-sip'];
   const adminPages = ['admin'];
   const contentPages = ['resources', 'comparisons'];
   const allValidPages = [
     ...infoPages,
     ...coreCalculators,
+    ...toolPages,
     ...adminPages,
     ...contentPages,
   ];
@@ -191,6 +218,7 @@ function App() {
   const isCalculatorPage =
     coreCalculators.includes(currentPath) || location.pathname === '/';
   const isContentPage = contentPages.includes(currentPath);
+  const isToolPage = toolPages.includes(currentPath);
   const isValidPath =
     allValidPages.includes(currentPath) ||
     location.pathname === '/' ||
@@ -482,6 +510,24 @@ function App() {
                 Compare
               </Link>
             </div>
+            {/* High-intent tools get their own header group so they are one
+                click (and one crawl hop) from every page on the site. */}
+            <div className="border-l border-white/10 ml-2 pl-2 flex gap-1">
+              {TOOL_NAV.map((t) => (
+                <Link
+                  key={t.path}
+                  to={t.path}
+                  aria-current={currentPath === t.path.slice(1) ? 'page' : undefined}
+                  className={`px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                    currentPath === t.path.slice(1)
+                      ? 'bg-emerald-600 text-white shadow-xl scale-105'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {t.short}
+                </Link>
+              ))}
+            </div>
           </nav>
         </div>
       </header>
@@ -508,6 +554,16 @@ function App() {
         ) : isAdminPage ? (
           <div className="max-w-6xl mx-auto">
             <AdminPanel />
+          </div>
+
+        /* Standalone tools */
+        ) : isToolPage ? (
+          <div className="py-10">
+            {currentPath === 'emi' && <EMICalculator />}
+            {currentPath === 'income-tax' && <IncomeTaxCalculator />}
+            {currentPath === 'ppf' && <PPFCalculator />}
+            {currentPath === 'fd' && <FDCalculator />}
+            {currentPath === 'goal-sip' && <GoalSIPCalculator />}
           </div>
 
         /* Content pages */
@@ -736,8 +792,23 @@ function App() {
               </ul>
             </div>
 
-            {/* Learn & Compare */}
+            {/* Tools */}
             <div className="text-center sm:text-left">
+              <h3 className="font-black mb-8 text-blue-400 uppercase tracking-[0.3em] text-[10px]">
+                Planning Tools
+              </h3>
+              <ul className="space-y-4 text-sm font-bold text-gray-400 mb-10">
+                {TOOL_NAV.map((t) => (
+                  <li key={t.path}>
+                    <Link
+                      to={t.path}
+                      className="hover:text-blue-400 transition-colors uppercase tracking-widest text-[11px]"
+                    >
+                      {t.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <h3 className="font-black mb-8 text-blue-400 uppercase tracking-[0.3em] text-[10px]">
                 Learn & Compare
               </h3>

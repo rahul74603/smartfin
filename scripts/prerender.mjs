@@ -106,6 +106,12 @@ const staticRoutes = [
   { url: '/lumpsum', key: 'lumpsum' },
   { url: '/compound', key: 'compound' },
   { url: '/simple', key: 'simple' },
+  // Standalone high-intent tools.
+  { url: '/emi', key: 'emi' },
+  { url: '/income-tax', key: 'income-tax' },
+  { url: '/ppf', key: 'ppf' },
+  { url: '/fd', key: 'fd' },
+  { url: '/goal-sip', key: 'goal-sip' },
   { url: '/resources', key: 'resources' },
   { url: '/comparisons', key: 'comparisons' },
   { url: '/about', key: 'about' },
@@ -117,10 +123,18 @@ const staticRoutes = [
 const blogRoutes = blogSeo.map((p) => ({ url: `/blog/${p.id}`, blog: p }));
 const allRoutes = [...staticRoutes, ...blogRoutes];
 
-const calculatorKeys = new Set(['sip', 'swp', 'lumpsum', 'compound', 'simple']);
+const calculatorKeys = new Set([
+  'sip', 'swp', 'lumpsum', 'compound', 'simple',
+  'emi', 'income-tax', 'ppf', 'fd', 'goal-sip',
+]);
 
 const breadcrumbLabels = {
   swp: 'SWP Calculator',
+  emi: 'EMI Calculator',
+  'income-tax': 'Income Tax Calculator',
+  ppf: 'PPF Calculator',
+  fd: 'FD & RD Calculator',
+  'goal-sip': 'Goal SIP Planner',
   lumpsum: 'Lumpsum Calculator',
   compound: 'Compound Interest Calculator',
   simple: 'Simple Interest Calculator',
@@ -393,7 +407,8 @@ for (const route of allRoutes) {
 // ── Regenerate sitemap.xml from the routes we actually rendered ─────────────
 const priorityFor = (url) => {
   if (url === '/') return '1.0';
-  if (['/swp', '/lumpsum', '/compound'].includes(url)) return '0.9';
+  if (['/swp', '/lumpsum', '/compound', '/emi', '/income-tax'].includes(url)) return '0.9';
+  if (['/ppf', '/fd', '/goal-sip'].includes(url)) return '0.85';
   if (url === '/simple') return '0.85';
   if (['/resources', '/comparisons'].includes(url)) return '0.8';
   if (url.startsWith('/blog/')) return '0.7';
