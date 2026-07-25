@@ -1,0 +1,115 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  SmartFintool — Apache / cPanel configuration
+#
+#  Ye file cPanel (Apache) ke liye hai. vercel.json aur _redirects sirf
+#  Vercel/Netlify pe kaam karte hain — Apache unhe ignore kar deta hai.
+#
+#  IMPORTANT: yahan classic SPA rule (sab kuch index.html pe bhejna) JAAN
+#  BOOJH KAR nahi hai. Har route ka apna prerendered folder hai
+#  (/emi/index.html waghairah). Sab kuch index.html pe bhej dene se har URL
+#  homepage ka HTML dikhata aur poori prerendering bekaar ho jaati.
+# ─────────────────────────────────────────────────────────────────────────────
+
+Options -Indexes
+DirectoryIndex index.html
+
+# mod_dir 301-redirects /emi to /emi/ when /emi is a real directory, which
+# would fight the trailing-slash rule below. mod_rewrite runs first so this is
+# already safe, but turning it off removes any chance of a redirect loop.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ── 1. HTTPS force karein ─────────────────────────────────────────────────
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # ── 2. www hata dein (canonical non-www) ──────────────────────────────────
+  # Sitemap aur canonical tags sab non-www use karte hain. Dono live rahenge
+  # to Google ranking signals do jagah baant dega.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # ── 3. Purane / galat URLs ka redirect ────────────────────────────────────
+  RewriteRule ^simple-interest-calculator/?$   /simple   [R=301,L]
+  RewriteRule ^compound-interest-calculator/?$ /compound [R=301,L]
+  RewriteRule ^sip-calculator/?$               /         [R=301,L]
+  RewriteRule ^swp-calculator/?$               /swp      [R=301,L]
+  RewriteRule ^lumpsum-calculator/?$           /lumpsum  [R=301,L]
+  RewriteRule ^calculators/?$                  /         [R=301,L]
+  RewriteRule ^blog/?$                         /resources [R=301,L]
+
+  # ── 4. Trailing slash hata dein (canonical me slash nahi hai) ─────────────
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # ── 5. Clean URL → prerendered folder ─────────────────────────────────────
+  # /emi ko /emi/index.html serve karna hai (redirect NAHI, silent rewrite).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+)$ /$1/index.html [L]
+
+  # ── 6. Jo bhi bacha = asli 404 ────────────────────────────────────────────
+  # Soft-404 (200 status ke saath "not found" page) Google ko confuse karta hai.
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+# ─── Compression (page speed = ranking signal) ───────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ─── Caching ─────────────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Hashed assets kabhi badalte nahi (naam me hash hai) → 1 saal cache
+  <FilesMatch "\.(js|css|woff2|woff|ttf)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(png|jpg|jpeg|gif|ico|svg|webp)$">
+    ExpiresDefault "access plus 6 months"
+  </FilesMatch>
+
+  # HTML har baar check ho, warna updated content stale rahega
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "(sitemap\.xml|robots\.txt)$">
+    ExpiresDefault "access plus 1 hour"
+  </FilesMatch>
+</IfModule>
+
+# ─── Correct MIME types ──────────────────────────────────────────────────────
+<IfModule mod_mime.c>
+  AddType application/javascript          .js
+  AddType text/css                        .css
+  AddType application/xml                 .xml
+  AddType image/svg+xml                   .svg
+  AddType image/x-icon                    .ico
+  AddType application/manifest+json       .webmanifest
+  AddType application/json                .json
+</IfModule>
+
+# ─── Security headers ────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+</IfModule>
