@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const financialGoalSettingPost: BlogPost = {
   id: 'financial-goal-setting',
   title: 'Financial Goal Setting: 5-Step SMART Framework For Every Indian Investor',
+  seoTitle: 'SMART Financial Goal Setting Framework',
   description: 'Learn how to set and achieve financial goals using the proven SMART framework. Calculate exact SIP amounts for house, car, education, and retirement goals with practical examples.',
   category: 'Financial Planning',
   readTime: 12,

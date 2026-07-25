@@ -160,8 +160,8 @@ const Terms = () => (
           <div className="bg-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-purple-500/30">
             <Scale className="w-8 h-8 text-white" />
           </div>
-          <CardTitle className="text-3xl sm:text-5xl font-black mb-3">
-            Terms of Service
+          <CardTitle asChild>
+            <h1 className="text-3xl sm:text-5xl font-black mb-3">Terms of Service</h1>
           </CardTitle>
           <p className="text-purple-200 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             Please read these terms carefully before using SmartFintool calculators,

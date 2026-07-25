@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const powerOfCompoundingPost: BlogPost = {
   id: 'power-of-compounding',
   title: 'The Power of Compounding: How ₹5,000/Month Becomes ₹3.5 Crore',
+  seoTitle: 'Power of Compounding Explained (India)',
   description: 'Understand compounding with real Indian examples. Learn how time and consistency transform small investments into massive wealth through the magic of compound interest.',
   category: 'Financial Education',
   readTime: 10,

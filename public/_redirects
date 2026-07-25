@@ -1,0 +1,27 @@
+# Netlify redirect rules for SmartFintool
+#
+# ORDER MATTERS. The classic SPA rule (/* /index.html 200) must NOT be used
+# here: it would shadow every prerendered route, so /swp would serve the
+# homepage HTML and undo the whole point of prerendering. Netlify already
+# serves dist/swp/index.html for /swp automatically, so we only need:
+#   1. host canonicalisation (www -> apex),
+#   2. legacy URL cleanup,
+#   3. a 404 fallback for genuinely unknown paths.
+
+# ── 1. Canonical host: force apex + https ───────────────────────────────────
+http://smartfintool.com/*    https://smartfintool.com/:splat    301!
+http://www.smartfintool.com/*  https://smartfintool.com/:splat  301!
+https://www.smartfintool.com/* https://smartfintool.com/:splat  301!
+
+# ── 2. Legacy / mistaken URLs that were live in schema and internal links ──
+/simple-interest-calculator   /simple      301
+/compound-interest-calculator /compound    301
+/sip-calculator               /            301
+/swp-calculator               /swp         301
+/lumpsum-calculator           /lumpsum     301
+/calculators                  /            301
+/blog                         /resources   301
+/index.html                   /            301
+
+# ── 3. Unknown paths get a real 404, not a soft-200 ────────────────────────
+/*  /404.html  404

@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const inflationImpactInvestmentsPost: BlogPost = {
   id: 'inflation-impact-investments',
   title: 'Inflation: How It Silently Destroys Your Wealth And How To Beat It',
+  seoTitle: 'How Inflation Erodes Wealth & How To Beat It',
   description: 'Learn how 6% inflation can halve your wealth in 12 years. Discover inflation-adjusted investment strategies, real vs nominal returns, and how to protect your purchasing power in India.',
   category: 'Investment Education',
   readTime: 11,

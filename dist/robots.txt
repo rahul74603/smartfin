@@ -1,10 +1,50 @@
-﻿User-agent: *
+# ── SmartFintool robots.txt ──────────────────────────────────────────────
+# https://smartfintool.com
+
+User-agent: *
 Allow: /
+
+# The admin panel is a private, noindex login screen. Keeping it out of the
+# crawl budget entirely (it was previously crawlable and only excluded via a
+# meta robots tag that Google has to render JavaScript to even see).
+Disallow: /admin
+
+# No value in indexing tracking/query permutations of the calculators.
+Disallow: /*?q=
+Disallow: /*?utm_
 
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin
+
+# Allow AI/answer engines — these increasingly drive discovery traffic.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block resource-wasting SEO scrapers so crawl budget goes to Googlebot.
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
 
 Sitemap: https://smartfintool.com/sitemap.xml

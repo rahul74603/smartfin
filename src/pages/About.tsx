@@ -1,54 +1,24 @@
 ﻿import { User, Target, CheckCircle2, TrendingUp, ShieldCheck, Calculator } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
-import { Helmet } from 'react-helmet-async';
 
 const About = () => (
   <>
-    <Helmet>
-      <title>About SmartFintool - Free Financial Calculator Platform for India | SIP, SWP, Lumpsum Calculator</title>
-      <meta
-        name="description"
-        content="SmartFintool is India's trusted free financial calculator platform founded by Rahul Kumar. Use our SIP calculator, SWP calculator, Lumpsum calculator, Compound Interest & Simple Interest calculators for smart investment planning and wealth growth analysis."
-      />
-      <meta
-        name="keywords"
-        content="about smartfintool, smartfintool, financial calculator india, free SIP calculator, SWP calculator, lumpsum calculator, compound interest calculator, simple interest calculator, investment planning india, retirement calculator, wealth growth calculator, best financial calculator india, Rahul Kumar smartfintool"
-      />
-      <link rel="canonical" href="https://www.smartfintool.com/about" />
+    {/*
+      Helmet block removed.
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.smartfintool.com/about" />
-      <meta property="og:title" content="About SmartFintool - India's Free Financial Calculator Platform" />
-      <meta
-        property="og:description"
-        content="Discover SmartFintool - India's trusted free financial calculator platform. SIP, SWP, Lumpsum, Compound & Simple Interest calculators for smart investment planning."
-      />
-      <meta property="og:image" content="https://www.smartfintool.com/og-about.png" />
-      <meta property="og:site_name" content="SmartFintool" />
-      <meta property="og:locale" content="en_IN" />
+      Two bugs here:
+      1. <HelmetProvider> was never mounted in main.tsx, so react-helmet-async
+         silently discarded every tag in this block — none of it ever reached
+         the document head.
+      2. The canonical it declared was https://www.smartfintool.com/about while
+         the sitemap, the hreflang tags and every internal link use the
+         non-www https://smartfintool.com/about. That is a self-conflicting
+         canonical and it splits ranking signals across two hostnames.
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content="https://www.smartfintool.com/about" />
-      <meta name="twitter:title" content="About SmartFintool - Free Financial Calculator Platform for India" />
-      <meta
-        name="twitter:description"
-        content="SmartFintool offers free SIP, SWP, Lumpsum, Compound & Simple Interest calculators for Indian investors. Plan your financial goals with clarity."
-      />
-      <meta name="twitter:image" content="https://www.smartfintool.com/og-about.png" />
-
-      {/* Additional SEO Meta */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="author" content="Rahul Kumar" />
-      <meta name="publisher" content="SmartFintool" />
-      <meta name="language" content="English" />
-      <meta name="geo.region" content="IN" />
-      <meta name="geo.country" content="India" />
-
-      {/* Structured Data */}
-      {/* Removed manual JSON-LD scripts because App.tsx already handles global SEO */}
-    </Helmet>
+      Meta for this route now comes from the single source of truth in
+      src/seo/config.ts, applied by App.tsx at runtime and baked into the
+      static HTML by scripts/prerender.mjs at build time.
+    */}
 
     <main className="max-w-6xl mx-auto space-y-12 pb-24 font-inter" role="main">
       {/* Breadcrumb Navigation */}

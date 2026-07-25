@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const mutualFundGuidePost: BlogPost = {
   id: 'mutual-fund-guide',
   title: 'Mutual Fund Complete Beginner Guide 2026: Zero Se Investment Pro Tak',
+  seoTitle: 'Mutual Fund Guide 2026 For Beginners',
   description: 'Complete A to Z guide to start mutual fund investing in India. Learn fund types, how to select best funds, KYC process, SIP setup, tax implications, and avoid common mistakes.',
   category: 'Mutual Funds',
   readTime: 18,

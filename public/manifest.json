@@ -1,22 +1,41 @@
 {
   "short_name": "SmartFintool",
-  "name": "SmartFintool - Financial Calculator Platform",
+  "name": "SmartFintool - Free SIP, SWP & Lumpsum Calculator India",
   "description": "Free online financial calculator platform for SIP, SWP, Lumpsum, Compound & Simple Interest calculations with detailed financial guidance for Indian investors.",
   "icons": [
     {
-      "src": "logo192.png",
-      "sizes": "192x192",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "logo512.png",
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "id": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",
@@ -25,6 +44,12 @@
   "lang": "en-IN",
   "dir": "ltr",
   "scope": "/",
+  "shortcuts": [
+    { "name": "SIP Calculator", "url": "/", "description": "Calculate SIP returns" },
+    { "name": "SWP Calculator", "url": "/swp", "description": "Plan monthly withdrawals" },
+    { "name": "Lumpsum Calculator", "url": "/lumpsum", "description": "One-time investment growth" },
+    { "name": "Compound Interest", "url": "/compound", "description": "Power of compounding" }
+  ],
   "related_applications": [],
   "prefer_related_applications": false
 }

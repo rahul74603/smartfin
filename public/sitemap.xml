@@ -1,128 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage = SIP Calculator (priority 1.0) -->
   <url>
     <loc>https://smartfintool.com/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Other Calculator Pages -->
   <url>
     <loc>https://smartfintool.com/swp</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/lumpsum</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/compound</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/simple</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- Content Pages -->
   <url>
     <loc>https://smartfintool.com/resources</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/comparisons</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Info Pages -->
   <url>
     <loc>https://smartfintool.com/about</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/privacy-policy</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/terms</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/disclaimer</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
-  <!-- Blog Posts -->
   <url>
     <loc>https://smartfintool.com/blog/sip-vs-lumpsum</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/retirement-planning-guide</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/power-of-compounding</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/financial-goal-setting</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/inflation-impact-investments</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/mutual-fund-guide</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/emergency-fund-planning</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartfintool.com/blog/investment-calculator-guide</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
 </urlset>

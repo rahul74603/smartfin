@@ -14,11 +14,24 @@ if (!rootElement) {
   )
 }
 
-// ── App Mount ──────────────────────────────────────────────────────────────
-ReactDOM.createRoot(rootElement).render(
+const tree = (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
 )
+
+/**
+ * Hydrate when the page was prerendered, mount normally otherwise.
+ *
+ * scripts/prerender.mjs bakes real HTML into every route at build time and
+ * marks it with data-prerendered. Calling createRoot on that markup would throw
+ * it away and re-render from scratch, wasting the LCP head start. hydrateRoot
+ * reuses it instead.
+ */
+if (rootElement.dataset.prerendered === 'true') {
+  ReactDOM.hydrateRoot(rootElement, tree)
+} else {
+  ReactDOM.createRoot(rootElement).render(tree)
+}

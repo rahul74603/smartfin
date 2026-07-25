@@ -26,49 +26,13 @@ const SimpleInterestCalculator = () => {
   const [rate, setRate] = useState(simpleDefaults.rate);
   const [time, setTime] = useState(simpleDefaults.time);
 
-  // ============ ENHANCED SEO META + SCHEMA ============
+  // ============ SCHEMA MARKUP (HowTo/Product only) ============
+  // NOTE: title, meta description/keywords, Open Graph, Twitter, robots and
+  // canonical are set GLOBALLY by App.tsx for every route. This component used
+  // to overwrite them with a canonical of /simple-interest-calculator — a URL
+  // that does not exist and is not in the sitemap. Google saw a canonical
+  // pointing at a 404 and dropped /simple from the index. Removed on purpose.
   useEffect(() => {
-    document.title = 'Simple Interest Calculator India - SI Formula Calculator 2026 | SmartFintool';
-
-    const updateMeta = (name: string, content: string, isProperty = false) => {
-      const attr = isProperty ? 'property' : 'name';
-      let meta = document.querySelector(`meta[${attr}="${name}"]`);
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute(attr, name);
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute('content', content);
-    };
-
-    updateMeta('description', 'Free Simple Interest Calculator India - Calculate SI online with formula (P×R×T)/100. Get instant results for loans, FD, deposits. Includes monthly & daily interest breakdown with PDF.');
-    updateMeta('keywords', 'simple interest calculator, si calculator, simple interest formula calculator, simple interest calculator india, online simple interest calculator, loan simple interest calculator, fd simple interest calculator, simple interest calculator with formula, calculate simple interest, simple interest formula');
-
-    // Open Graph
-    updateMeta('og:title', 'Simple Interest Calculator India - Calculate SI Online', true);
-    updateMeta('og:description', 'Free Simple Interest Calculator with formula. Calculate interest on loans, deposits & investments instantly.', true);
-    updateMeta('og:type', 'website', true);
-    updateMeta('og:url', 'https://smartfintool.com/simple-interest-calculator', true);
-
-    // Twitter
-    updateMeta('twitter:card', 'summary_large_image');
-    updateMeta('twitter:title', 'Simple Interest Calculator India');
-    updateMeta('twitter:description', 'Free SI calculator with formula explanation');
-
-    // SEO meta
-    updateMeta('robots', 'index, follow, max-snippet:-1, max-image-preview:large');
-    updateMeta('author', 'Rahul Kumar - SmartFintool');
-    updateMeta('geo.region', 'IN');
-    updateMeta('geo.placename', 'India');
-
-    // Canonical
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', 'https://smartfintool.com/simple-interest-calculator');
 
     // ============ SCHEMA MARKUP ============
     const oldSchema = document.getElementById('si-schema');
@@ -84,7 +48,7 @@ const SimpleInterestCalculator = () => {
           "@type": "WebApplication",
           "name": "Simple Interest Calculator",
           "alternateName": "SI Calculator",
-          "url": "https://smartfintool.com/simple-interest-calculator",
+          "url": "https://smartfintool.com/simple",
           "description": "Free simple interest calculator with formula explanation",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "Any",
@@ -167,9 +131,8 @@ const SimpleInterestCalculator = () => {
         {
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartfintool.com" },
-            { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://smartfintool.com/calculators" },
-            { "@type": "ListItem", "position": 3, "name": "Simple Interest Calculator", "item": "https://smartfintool.com/simple-interest-calculator" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartfintool.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Simple Interest Calculator", "item": "https://smartfintool.com/simple" }
           ]
         }
       ]
@@ -211,18 +174,19 @@ const SimpleInterestCalculator = () => {
       <nav aria-label="Breadcrumb" className="text-sm text-gray-600 pt-6">
         <ol className="flex items-center gap-2">
           <li><a href="/" className="hover:text-rose-600">Home</a></li>
-          <li>/</li>
-          <li><a href="/calculators" className="hover:text-rose-600">Calculators</a></li>
-          <li>/</li>
-          <li className="text-rose-600 font-medium">Simple Interest Calculator</li>
+          <li aria-hidden="true">/</li>
+          <li className="text-rose-600 font-medium" aria-current="page">Simple Interest Calculator</li>
         </ol>
       </nav>
 
-      {/* H1 Hero */}
+      {/* Section heading.
+          This was an <h1>, which gave /simple two H1s — App.tsx already renders
+          the page H1 in the hero, and the other four calculators correctly use
+          an h2 here. Demoted to h2 to keep one H1 per document. */}
       <header className="text-center space-y-4">
-        <h1 className="text-3xl sm:text-5xl font-black text-[#0f172a] tracking-tight">
+        <h2 className="text-3xl sm:text-5xl font-black text-[#0f172a] tracking-tight">
           Simple Interest Calculator - SI Formula Calculator Online
-        </h1>
+        </h2>
         <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Calculate simple interest instantly using the SI formula (P × R × T) / 100. 
           Free online calculator for loans, fixed deposits, savings with monthly & daily interest breakdown.

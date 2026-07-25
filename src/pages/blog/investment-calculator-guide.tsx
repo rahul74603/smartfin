@@ -5,6 +5,7 @@ import type { BlogPost } from '../../data/blogData'; // 'type' keyword add kiya
 export const investmentCalculatorGuidePost: BlogPost = {
   id: 'investment-calculator-guide',
   title: 'SmartFintool Calculator Guide: SIP, SWP, Lumpsum, Compound Interest — Sab Kuch',
+  seoTitle: 'SIP, SWP & Lumpsum Calculator Guide',
   description: 'Master every SmartFintool calculator to make better financial decisions. Learn when to use SIP, SWP, Lumpsum, and Compound Interest calculators with real examples and scenario planning.',
   category: 'Tools Guide',
   readTime: 14,

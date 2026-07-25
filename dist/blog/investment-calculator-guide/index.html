@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- ── Google Search Console Verification ──────────────────────────── -->
+    <meta name="google-site-verification" content="npmZcSYcKdwCPkZ7c61wBQmWaLdtgHTFziDVoygOVQw" />
+
+    <!-- ── Primary Meta (App.tsx overrides per page dynamically) ───────── -->
+    <title>SIP, SWP &amp; Lumpsum Calculator Guide | SmartFintool</title>
+    <meta name="title" content="SIP, SWP &amp; Lumpsum Calculator Guide | SmartFintool" />
+    <meta name="description" content="Master every SmartFintool calculator to make better financial decisions. Learn when to use SIP, SWP, Lumpsum, and Compound Interest calculators with real examples and scenario planning." />
+    <meta name="keywords" content="smartfintool calculator guide, how to use SIP calculator, SWP calculator india, financial tools tutorial hindi, investment calculator kaise use karein" />
+    <meta name="author" content="Rahul Kumar" />
+    <meta name="publisher" content="SmartFintool" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ── Geo Targeting India ──────────────────────────────────────────── -->
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.country" content="India" />
+    <meta name="geo.placename" content="India" />
+    <meta name="language" content="en-IN" />
+    <meta name="target" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+
+    <!-- ── Canonical & Hreflang (App.tsx overrides per page) ────────────── -->
+    <link rel="canonical" href="https://smartfintool.com/blog/investment-calculator-guide" />
+    <link rel="alternate" hreflang="en-IN" href="https://smartfintool.com/blog/investment-calculator-guide" />
+    <link rel="alternate" hreflang="x-default" href="https://smartfintool.com/blog/investment-calculator-guide" />
+
+    <!-- ── Sitemap Reference ────────────────────────────────────────────── -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- ── Open Graph ───────────────────────────────────────────────────── -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="SmartFintool" />
+    <meta property="og:url" content="https://smartfintool.com/blog/investment-calculator-guide" />
+    <meta property="og:title" content="SIP, SWP &amp; Lumpsum Calculator Guide | SmartFintool" />
+    <meta property="og:description" content="Master every SmartFintool calculator to make better financial decisions. Learn when to use SIP, SWP, Lumpsum, and Compound Interest calculators with real examples and scenario planning." />
+    <meta property="og:image" content="https://smartfintool.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://smartfintool.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SmartFintool – Free Financial Calculators India" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- ── Twitter Card ─────────────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@smartfintool" />
+    <meta name="twitter:creator" content="@smartfintool" />
+    <meta name="twitter:url" content="https://smartfintool.com/blog/investment-calculator-guide" />
+    <meta name="twitter:title" content="SIP, SWP &amp; Lumpsum Calculator Guide | SmartFintool" />
+    <meta name="twitter:description" content="Master every SmartFintool calculator to make better financial decisions. Learn when to use SIP, SWP, Lumpsum, and Compound Interest calculators with real examples and scenario planning." />
+    <meta name="twitter:image" content="https://smartfintool.com/og-image.png" />
+    <meta name="twitter:image:alt" content="SmartFintool Financial Calculator India" />
+
+    <!-- ── PWA & Icons ──────────────────────────────────────────────────── -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SmartFintool" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- ── Performance: Preconnect & DNS Prefetch ───────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+    <!-- ─────────────────────────────────────────────────────────────────── -->
+    <!--  SCHEMA: Combined @graph (Website + Organization + ItemList)       -->
+    <!--  ⚠️ FAQPage REMOVED from global - add per page only                -->
+    <!--  ✅ URLs UPDATED to match actual App.tsx routes                    -->
+    <!-- ─────────────────────────────────────────────────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://smartfintool.com/#website",
+          "name": "SmartFintool",
+          "alternateName": "Smart Fin Tool",
+          "url": "https://smartfintool.com/",
+          "description": "Free online financial calculator platform for Indian investors offering SIP, SWP, Lumpsum, Compound Interest and Simple Interest calculators.",
+          "inLanguage": "en-IN",
+          "publisher": { "@id": "https://smartfintool.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://smartfintool.com/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://smartfintool.com/#organization",
+          "name": "SmartFintool",
+          "alternateName": "Smart Fin Tool",
+          "url": "https://smartfintool.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://smartfintool.com/logo192.png",
+            "width": 192,
+            "height": 192
+          },
+          "image": "https://smartfintool.com/og-image.png",
+          "foundingDate": "2024",
+          "founder": {
+            "@type": "Person",
+            "name": "Rahul Kumar"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "help@smartfintool.com",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "description": "SmartFintool provides free SIP, SWP, Lumpsum, Compound Interest and Simple Interest calculators for Indian investors to plan long-term wealth and retirement.",
+          "sameAs": [
+            "https://twitter.com/smartfintool"
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://smartfintool.com/#calculators",
+          "name": "SmartFintool Financial Calculators",
+          "description": "Free financial calculators for Indian investors",
+          "numberOfItems": 5,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "SIP Calculator India",
+              "url": "https://smartfintool.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "SWP Calculator India",
+              "url": "https://smartfintool.com/swp"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Lumpsum Calculator India",
+              "url": "https://smartfintool.com/lumpsum"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Compound Interest Calculator India",
+              "url": "https://smartfintool.com/compound"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Simple Interest Calculator India",
+              "url": "https://smartfintool.com/simple"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ── Critical CSS: Loading Spinner (prevents flash) ───────────────── -->
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0; padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f8fafc;
+        color: #0f172a;
+      }
+      #root { min-height: 100vh; }
+      .sft-loading {
+        display: flex; flex-direction: column;
+        justify-content: center; align-items: center;
+        min-height: 100vh; gap: 20px;
+        background: #0f172a;
+      }
+      .sft-spinner {
+        width: 48px; height: 48px;
+        border: 4px solid rgba(59, 130, 246, 0.2);
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: sft-spin 0.8s linear infinite;
+      }
+      .sft-loading-text {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 13px; font-weight: 600;
+        letter-spacing: 0.15em; text-transform: uppercase;
+      }
+      @keyframes sft-spin { to { transform: rotate(360deg); } }
+      /* Accessibility: keyboard users can jump past the nav. Lighthouse
+         accessibility score feeds into overall page quality signals. */
+      .sft-skip {
+        position: absolute; left: -9999px; top: 0; z-index: 999;
+        background: #2563eb; color: #fff; padding: 12px 20px;
+        font-weight: 700; border-radius: 0 0 8px 0; text-decoration: none;
+      }
+      .sft-skip:focus { left: 0; }
+      @media (prefers-reduced-motion: reduce) {
+        .sft-spinner { animation-duration: 3s; }
+        * { scroll-behavior: auto !important; }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-BDnezQ26.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-JtmIZM7u.js">
+    <link rel="modulepreload" crossorigin href="/assets/radix-CX4JLiW9.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-C9WSTrfe.js">
+    <link rel="modulepreload" crossorigin href="/assets/pdf-D0L9Xz9i.js">
+    <link rel="modulepreload" crossorigin href="/assets/charts-CBZK__jD.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-BIPhJa5i.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-hQWDvtrK.js">
+    <link rel="modulepreload" crossorigin href="/assets/firebase-CMP64Kzf.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DMvf213V.css">
+      <script type="application/ld+json" id="sft-article">{"@context":"https://schema.org","@type":"Article","headline":"SmartFintool Calculator Guide: SIP, SWP, Lumpsum, Compound Interest — Sab Kuch","description":"Master every SmartFintool calculator to make better financial decisions. Learn when to use SIP, SWP, Lumpsum, and Compound Interest calculators with real examples and scenario planning.","image":"https://smartfintool.com/og-image.png","datePublished":"2026-03-15","dateModified":"2026-03-15","inLanguage":"en-IN","articleSection":"Tools Guide","keywords":"smartfintool calculator guide, how to use SIP calculator, SWP calculator india, financial tools tutorial hindi, investment calculator kaise use karein","timeRequired":"PT14M","author":{"@type":"Person","name":"SmartFintool Team","jobTitle":"Financial Education Experts","url":"https://smartfintool.com/about"},"publisher":{"@type":"Organization","name":"SmartFintool","url":"https://smartfintool.com","logo":{"@type":"ImageObject","url":"https://smartfintool.com/logo192.png","width":192,"height":192}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://smartfintool.com/blog/investment-calculator-guide"}}</script>
+    <script type="application/ld+json" id="sft-article-faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"SIP Calculator mein kitna return daalna safe hai?","acceptedAnswer":{"@type":"Answer","text":"Safe planning ke liye Large Cap/Index funds mein 10-12%, aur Mid/Small cap mein 12-14% assume karna chahiye. 15% ya usse zyada daalna unrealistic expectations set kar sakta hai."}},{"@type":"Question","name":"SWP kab shuru karni chahiye?","acceptedAnswer":{"@type":"Answer","text":"SWP (Systematic Withdrawal Plan) tab shuru karni chahiye jab aap retire ho gaye hon ya aapko corpus se regular monthly income ki zarurat ho. Ye pension ka ek excellent alternative hai."}},{"@type":"Question","name":"Lumpsum aur SIP calculator mein kya farq hai?","acceptedAnswer":{"@type":"Answer","text":"SIP calculator regular monthly investment (jaise har mahine ₹5000) calculate karta hai. Lumpsum calculator ek baar mein invest kiye gaye bade amount (jaise ek baar daale gaye ₹5 Lakh) ki growth calculate karta hai."}},{"@type":"Question","name":"Step-up SIP ka kya fayda hai?","acceptedAnswer":{"@type":"Answer","text":"Step-up SIP mein aap har saal apni SIP amount badhate hain (jaise 10% har saal). Isse aapki salary growth ke sath investment badhti hai, aur final corpus normal SIP se 30-40% zyada ban sakta hai."}},{"@type":"Question","name":"Inflation rate kitna assume karein?","acceptedAnswer":{"@type":"Answer","text":"India mein long-term financial planning ke liye average 6% inflation rate assume karna safe aur standard practice hai."}}]}</script>
+    <script type="application/ld+json" id="sft-article-breadcrumb">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smartfintool.com/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://smartfintool.com/resources"},{"@type":"ListItem","position":3,"name":"SmartFintool Calculator Guide: SIP, SWP, Lumpsum, Compound Interest — Sab Kuch","item":"https://smartfintool.com/blog/investment-calculator-guide"}]}</script>
+  </head>
+
+  <body>
+    <a href="#main-content" class="sft-skip">Skip to main content</a>
+    <div id="root" data-prerendered="true"><div class="min-h-screen bg-[#f8fafc] pb-20 md:pb-0 font-inter text-[#0f172a]"><header class="bg-[#0f172a] text-white sticky top-0 z-50 border-b border-white/5 shadow-2xl backdrop-blur-md bg-opacity-95"><div class="container mx-auto px-4 py-4 flex items-center justify-between"><a class="flex items-center gap-3 cursor-pointer group" aria-label="SmartFintool home" href="/" data-discover="true"><div class="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-2xl group-hover:rotate-12 transition-transform shadow-lg shadow-blue-500/20"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator w-8 h-8 md:w-7 md:h-7 text-white" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><div><span class="block text-2xl sm:text-3xl md:text-2xl font-black leading-tight tracking-tighter">SmartFintool</span><span class="block text-[11px] sm:text-[12px] md:text-[10px] text-blue-400 font-black uppercase tracking-[0.2em]">Wealth Intelligence</span></div></a><nav class="hidden lg:flex items-center gap-1 bg-white/5 p-1 rounded-2xl border border-white/10" aria-label="Main navigation"><a aria-label="Open SIP Calculator" class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/" data-discover="true">sip</a><a aria-label="Open SWP Calculator" class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/swp" data-discover="true">swp</a><a aria-label="Open Compound Interest" class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/compound" data-discover="true">compound</a><a aria-label="Open Simple Interest" class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/simple" data-discover="true">simple</a><a aria-label="Open Lumpsum Calculator" class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/lumpsum" data-discover="true">lumpsum</a><div class="border-l border-white/10 ml-2 pl-2 flex gap-1"><a class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/resources" data-discover="true">Resources</a><a class="px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all text-gray-400 hover:text-white hover:bg-white/5" href="/comparisons" data-discover="true">Compare</a></div></nav></div></header><main id="main-content" class="container mx-auto px-4 py-8"><div class="max-w-4xl mx-auto px-4 py-12 font-inter"><nav aria-label="Breadcrumb" class="mb-8"><ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500"><li><a class="hover:text-indigo-600 font-medium" href="/" data-discover="true">Home</a></li><li aria-hidden="true">/</li><li><a class="hover:text-indigo-600 font-medium" href="/resources" data-discover="true">Resources</a></li><li aria-hidden="true">/</li><li class="text-indigo-600 font-semibold line-clamp-1" aria-current="page">SmartFintool Calculator Guide: SIP, SWP, Lumpsum, Compound Interest — Sab Kuch</li></ol></nav><button class="flex items-center gap-2 text-indigo-600 font-bold mb-8 hover:gap-3 transition-all"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left w-5 h-5" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> Back to Resources</button><article class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100"><div class="h-2 bg-gradient-to-r from-blue-600 to-purple-600"></div><div class="p-8 sm:p-16 space-y-8"><div class="flex flex-wrap items-center gap-4"><span class="bg-indigo-50 text-indigo-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Tools Guide</span><span class="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-4 h-4" aria-hidden="true"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg> <!-- -->14<!-- --> Min Read</span><span class="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days w-4 h-4" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg><time dateTime="2026-03-15">15 Mar 2026</time></span><span class="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round w-4 h-4" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg> <!-- -->SmartFintool Team</span></div><h1 class="text-3xl sm:text-5xl font-black text-[#0f172a] leading-tight tracking-tighter">SmartFintool Calculator Guide: SIP, SWP, Lumpsum, Compound Interest — Sab Kuch</h1><p class="text-lg text-gray-600 leading-relaxed border-l-4 border-indigo-200 pl-5 italic">Master every SmartFintool calculator to make better financial decisions. Learn when to use SIP, SWP, Lumpsum, and Compound Interest calculators with real examples and scenario planning.</p><div class="prose prose-indigo max-w-none text-gray-600 leading-relaxed text-lg">
+      <div class="space-y-8">
+
+        <div class="bg-gradient-to-r from-slate-50 to-gray-50 rounded-2xl p-6 border-l-4 border-slate-600">
+          <p class="text-xl font-bold text-slate-700 mb-2">🧮 Calculators: Aapka Financial GPS</p>
+          <p class="text-gray-700">Calculator sirf numbers nahi deta — ye aapko future dikhaata hai. Sahi inputs doge toh sahi plan banayega. Is guide mein samjho ki har calculator ka use kab aur kaise karein.</p>
+        </div>
+
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Zyadatar log calculators galat use karte hain — unrealistic returns daale, inflation bhool gaye, ya wrong calculator choose kiya. 
+          <strong class="text-slate-700">Ye guide ensure karega ki aap SmartFintool ke har tool ka maximum fayda uthaao.</strong>
+        </p>
+
+        <h2 class="text-3xl font-black text-slate-900 mt-10 pb-3 border-b-2 border-blue-200">1. SIP Calculator: Har Mahine Ka Paisa Kitna Banega?</h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+          SIP Calculator ka use tab karo jab aap <strong>regular monthly investing</strong> kar rahe ho ya karna chahte ho. 
+          Ye batata hai ki aapki monthly SIP years mein kaise grow karegi.
+        </p>
+
+        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+          <h3 class="text-xl font-bold text-blue-800 mb-4">📱 SIP Calculator Inputs: Kya Daalein?</h3>
+          <div class="space-y-4">
+            <div class="bg-white rounded-xl p-4">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="bg-blue-600 text-white font-black rounded-full w-7 h-7 flex items-center justify-center text-xs">1</span>
+                <h4 class="font-bold text-slate-900">Monthly Investment Amount</h4>
+              </div>
+              <p class="text-sm text-gray-600 pl-10">Jo aap actually invest kar sakte hain — realistic rakhein. Agar ₹10,000 afford nahi hota toh ₹5,000 se shuru karo. <strong>Tip: Income ka 20% investment ke liye rakho.</strong></p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="bg-blue-600 text-white font-black rounded-full w-7 h-7 flex items-center justify-center text-xs">2</span>
+                <h4 class="font-bold text-slate-900">Expected Annual Return</h4>
+              </div>
+              <p class="text-sm text-gray-600 pl-10">Conservative estimate use karo: Large Cap/Index: 11-12%, Flexi Cap: 12-13%, Mid/Small Cap: 13-15%. <strong>Warning: 20%+ return daalna unrealistic hai.</strong></p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="bg-blue-600 text-white font-black rounded-full w-7 h-7 flex items-center justify-center text-xs">3</span>
+                <h4 class="font-bold text-slate-900">Investment Duration (Years)</h4>
+              </div>
+              <p class="text-sm text-gray-600 pl-10">Goal date se calculate karo. Agar 2035 mein paisa chahiye aur abhi 2026 hai toh 10 saal. Longer duration = dramatically higher corpus.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200 mt-4">
+          <h3 class="text-xl font-bold text-blue-800 mb-4">💡 SIP Calculator Se 3 Important Questions Ka Jawab</h3>
+          <div class="space-y-3">
+            <div class="bg-white rounded-xl p-4">
+              <p class="font-bold text-slate-900">Q: "Mujhe ₹1 Crore chahiye 15 saal mein — kitni SIP karni hogi?"</p>
+              <p class="text-sm text-gray-600 mt-2">→ SIP Calculator mein Target Amount field use karo (reverse calculation). 12% return assume karo → Answer: ~₹20,000/month</p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+              <p class="font-bold text-slate-900">Q: "₹10,000/month 20 saal mein kitna banega?"</p>
+              <p class="text-sm text-gray-600 mt-2">→ Standard SIP Calculator — Amount + Years + Return dalo → Result milega automatically</p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+              <p class="font-bold text-slate-900">Q: "Step-up SIP se kitna fark padta hai?"</p>
+              <p class="text-sm text-gray-600 mt-2">→ Step-up SIP Calculator use karo. 10% annual step-up se final corpus 30-40% zyada hota hai same duration mein.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-black text-slate-900 mt-10 pb-3 border-b-2 border-purple-200">2. SWP Calculator: Retirement Mein Monthly Income Kaise Banayein?</h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+          SWP (Systematic Withdrawal Plan) Calculator ka use retire hone ke baad ya regular income plan karne ke liye karo. 
+          Ye batata hai ki ek fixed corpus se monthly withdraw karte waqt paisa kitne saal chalega.
+        </p>
+
+        <div class="bg-purple-50 rounded-2xl p-6 border border-purple-200">
+          <h3 class="text-xl font-bold text-purple-800 mb-4">🎯 SWP Calculator: 2 Scenarios</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-5">
+              <h4 class="font-bold text-purple-700 mb-3">Scenario A: ₹50 Lakh Corpus</h4>
+              <div class="space-y-2 text-sm text-gray-700">
+                <p>Monthly withdrawal: ₹25,000</p>
+                <p>Expected return on corpus: 8%</p>
+                <p class="font-bold text-green-700 mt-3">Result: Corpus 30+ years chalega! ✅</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl p-5">
+              <h4 class="font-bold text-purple-700 mb-3">Scenario B: ₹50 Lakh Corpus</h4>
+              <div class="space-y-2 text-sm text-gray-700">
+                <p>Monthly withdrawal: ₹60,000</p>
+                <p>Expected return on corpus: 8%</p>
+                <p class="font-bold text-red-700 mt-3">Result: Corpus sirf 9 saal chalega! ❌</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-4 italic">Safe withdrawal rate: Monthly nikalna corpus ka max 0.4% per month (4-4.5% per year) se kam hona chahiye taaki corpus grow karta rahe.</p>
+        </div>
+
+        <h2 class="text-3xl font-black text-slate-900 mt-10 pb-3 border-b-2 border-amber-200">3. Lumpsum Calculator: Ek Baar Ka Paisa Kitna Banega?</h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+          Jab bhi aapke paas ek saath bada paisa aaye — bonus, inheritance, property sale — Lumpsum Calculator use karo. 
+          Ye batata hai ki wo paisa time ke sath kaise grow karega.
+        </p>
+
+        <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+          <h3 class="text-xl font-bold text-amber-800 mb-4">📊 Lumpsum Calculator Example</h3>
+          <div class="overflow-x-auto rounded-xl">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-amber-700 text-white">
+                  <th class="px-4 py-3 text-left">Lumpsum Amount</th>
+                  <th class="px-4 py-3 text-left">Return</th>
+                  <th class="px-4 py-3 text-left">5 Saal</th>
+                  <th class="px-4 py-3 text-left">10 Saal</th>
+                  <th class="px-4 py-3 text-left">20 Saal</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-amber-100">
+                <tr class="bg-white"><td class="px-4 py-3">₹5 Lakh</td><td class="px-4 py-3">12%</td><td class="px-4 py-3">₹8.8L</td><td class="px-4 py-3">₹15.5L</td><td class="px-4 py-3 font-bold text-green-700">₹48.2L</td></tr>
+                <tr class="bg-amber-50"><td class="px-4 py-3">₹10 Lakh</td><td class="px-4 py-3">12%</td><td class="px-4 py-3">₹17.6L</td><td class="px-4 py-3">₹31L</td><td class="px-4 py-3 font-bold text-green-700">₹96.5L</td></tr>
+                <tr class="bg-white"><td class="px-4 py-3">₹25 Lakh</td><td class="px-4 py-3">12%</td><td class="px-4 py-3">₹44L</td><td class="px-4 py-3">₹77.6L</td><td class="px-4 py-3 font-bold text-green-700">₹2.41 Cr</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-black text-slate-900 mt-10 pb-3 border-b-2 border-green-200">4. Compound Interest Calculator: FD aur Savings Planning</h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+          Compound Interest Calculator FD, savings accounts, NSC, PPF jaise fixed-return instruments ke liye best hai. 
+          Ye alag-alag compounding frequencies (monthly, quarterly, annually) ka comparison karne deta hai.
+        </p>
+
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+          <h3 class="text-xl font-bold text-green-800 mb-4">🏦 Compounding Frequency Ka Asar</h3>
+          <p class="text-gray-700 mb-4">₹1 Lakh, 7% rate, 10 saal mein:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="bg-white rounded-xl p-4 text-center">
+              <p class="text-xs text-gray-400 mb-1">Annual</p>
+              <p class="text-xl font-black text-gray-700">₹1.97L</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center">
+              <p class="text-xs text-gray-400 mb-1">Quarterly</p>
+              <p class="text-xl font-black text-blue-700">₹2.00L</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center">
+              <p class="text-xs text-gray-400 mb-1">Monthly</p>
+              <p class="text-xl font-black text-green-700">₹2.01L</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center">
+              <p class="text-xs text-gray-400 mb-1">Daily</p>
+              <p class="text-xl font-black text-purple-700">₹2.01L</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 mt-3 italic">Monthly aur Daily compounding ka fark minimal hota hai. Quarterly se Monthly mein zyada fark hota hai.</p>
+        </div>
+
+       <h2 class="text-3xl font-black text-slate-900 mt-10 pb-3 border-b-2 border-rose-200">5. Inflation Adjustment: Use Zaroor Karein</h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+          Ye option sabse zyada ignore hota hai, lekin ye sabse important hai. Inflation (mehangai) aapke paise ki purchasing power kam karti hai.
+        </p>
+
+        <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
+          <h3 class="text-xl font-bold text-rose-800 mb-4">⚠️ Real Value vs Nominal Value</h3>
+          <p class="text-gray-700 mb-3">Agar aap SIP Calculator mein dekhte hain ki 20 saal baad aapke paas ₹2 Crore honge, toh kya aap sach mein aaj ke ₹2 Crore jitne ameer honge?</p>
+          <p class="text-gray-700"><strong>Nahi!</strong> 6% inflation ke hisaab se uski <em>Real Value</em> (aaj ki purchasing power) sirf ₹62 Lakh hogi. Isliye, planning hamesha Inflation Adjusted return se karein.</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-slate-800 to-gray-900 rounded-2xl p-8 text-white mt-10">
+          <h3 class="text-2xl font-black mb-3">🚀 Sabhi Calculators Ek Jagah</h3>
+          <p class="text-gray-300 mb-4">SmartFintool ke saare free calculators use karein aur apni financial planning ko next level par le jayein.</p>
+          <a href="/" class="bg-white text-slate-900 px-6 py-3 rounded-full font-black text-sm cursor-pointer hover:bg-gray-100 transition inline-block">→ Explore All Calculators</a>
+        </div>
+
+      </div>
+    </div><section class="mt-16 bg-blue-50 rounded-[2rem] p-8 border border-blue-100"><h2 class="text-2xl font-black text-blue-900 mb-6">Article FAQ</h2><div class="space-y-6"><div><h3 class="font-bold text-[#0f172a] mb-2">SIP Calculator mein kitna return daalna safe hai?</h3><p class="text-gray-600 text-sm">Safe planning ke liye Large Cap/Index funds mein 10-12%, aur Mid/Small cap mein 12-14% assume karna chahiye. 15% ya usse zyada daalna unrealistic expectations set kar sakta hai.</p></div><div><h3 class="font-bold text-[#0f172a] mb-2">SWP kab shuru karni chahiye?</h3><p class="text-gray-600 text-sm">SWP (Systematic Withdrawal Plan) tab shuru karni chahiye jab aap retire ho gaye hon ya aapko corpus se regular monthly income ki zarurat ho. Ye pension ka ek excellent alternative hai.</p></div><div><h3 class="font-bold text-[#0f172a] mb-2">Lumpsum aur SIP calculator mein kya farq hai?</h3><p class="text-gray-600 text-sm">SIP calculator regular monthly investment (jaise har mahine ₹5000) calculate karta hai. Lumpsum calculator ek baar mein invest kiye gaye bade amount (jaise ek baar daale gaye ₹5 Lakh) ki growth calculate karta hai.</p></div><div><h3 class="font-bold text-[#0f172a] mb-2">Step-up SIP ka kya fayda hai?</h3><p class="text-gray-600 text-sm">Step-up SIP mein aap har saal apni SIP amount badhate hain (jaise 10% har saal). Isse aapki salary growth ke sath investment badhti hai, aur final corpus normal SIP se 30-40% zyada ban sakta hai.</p></div><div><h3 class="font-bold text-[#0f172a] mb-2">Inflation rate kitna assume karein?</h3><p class="text-gray-600 text-sm">India mein long-term financial planning ke liye average 6% inflation rate assume karna safe aur standard practice hai.</p></div></div></section><section class="rounded-[2rem] bg-[#0f172a] text-white p-8"><h2 class="text-xl font-black mb-2">Run the numbers yourself</h2><p class="text-slate-400 text-sm mb-6">Use the free SmartFintool calculators to apply this guide to your own money.</p><div class="grid sm:grid-cols-2 gap-3"><a class="bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-sm font-bold hover:bg-white/10 transition-all" href="/" data-discover="true">SIP Calculator</a><a class="bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-sm font-bold hover:bg-white/10 transition-all" href="/swp" data-discover="true">SWP Calculator</a><a class="bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-sm font-bold hover:bg-white/10 transition-all" href="/lumpsum" data-discover="true">Lumpsum Calculator</a><a class="bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-sm font-bold hover:bg-white/10 transition-all" href="/compound" data-discover="true">Compound Interest Calculator</a></div></section></div></article><section class="mt-16"><h2 class="text-2xl font-black text-[#0f172a] mb-6">Related guides</h2><div class="grid sm:grid-cols-3 gap-5"><a class="bg-white rounded-3xl border border-slate-100 shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all" href="/blog/sip-vs-lumpsum" data-discover="true"><p class="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-2">Investment Strategy</p><h3 class="font-bold text-[#0f172a] leading-snug line-clamp-3">SIP vs Lumpsum: Which Investment Strategy Is Best For You In 2026?</h3><p class="text-xs text-gray-400 mt-3 font-bold uppercase">12<!-- --> min read</p></a><a class="bg-white rounded-3xl border border-slate-100 shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all" href="/blog/retirement-planning-guide" data-discover="true"><p class="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-2">Financial Planning</p><h3 class="font-bold text-[#0f172a] leading-snug line-clamp-3">Retirement Planning Guide 2026: Calculate Your Exact Retirement Corpus</h3><p class="text-xs text-gray-400 mt-3 font-bold uppercase">15<!-- --> min read</p></a><a class="bg-white rounded-3xl border border-slate-100 shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-all" href="/blog/power-of-compounding" data-discover="true"><p class="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-2">Financial Education</p><h3 class="font-bold text-[#0f172a] leading-snug line-clamp-3">The Power of Compounding: How ₹5,000/Month Becomes ₹3.5 Crore</h3><p class="text-xs text-gray-400 mt-3 font-bold uppercase">10<!-- --> min read</p></a></div></section></div></main><footer class="bg-[#0f172a] text-white pt-24 pb-12 border-t border-white/5 relative overflow-hidden" aria-label="Site footer"><div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500"></div><div class="container mx-auto px-4"><div class="grid grid-cols-1 md:grid-cols-5 gap-16 mb-20"><div class="space-y-6 text-center sm:text-left"><div class="flex items-center justify-center sm:justify-start gap-3"><div class="bg-blue-600 p-2.5 rounded-2xl shadow-xl shadow-blue-600/20"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator w-6 h-6" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></div><span class="text-3xl font-black tracking-tighter">SmartFintool</span></div><p class="text-gray-400 text-sm leading-relaxed font-medium">India focused free financial planning toolkit with SIP, SWP, Lumpsum, Compound and Simple Interest calculators for smart wealth building.</p></div><div class="text-center sm:text-left"><h3 class="font-black mb-8 text-blue-400 uppercase tracking-[0.3em] text-[10px]">Calculators</h3><ul class="space-y-4 text-sm font-bold text-gray-400"><li><a class="hover:text-blue-400 transition-colors uppercase tracking-widest text-[11px]" href="/" data-discover="true">sip<!-- --> Calculator</a></li><li><a class="hover:text-blue-400 transition-colors uppercase tracking-widest text-[11px]" href="/swp" data-discover="true">swp<!-- --> Calculator</a></li><li><a class="hover:text-blue-400 transition-colors uppercase tracking-widest text-[11px]" href="/compound" data-discover="true">compound<!-- --> Calculator</a></li><li><a class="hover:text-blue-400 transition-colors uppercase tracking-widest text-[11px]" href="/simple" data-discover="true">simple<!-- --> Calculator</a></li><li><a class="hover:text-blue-400 transition-colors uppercase tracking-widest text-[11px]" href="/lumpsum" data-discover="true">lumpsum<!-- --> Calculator</a></li></ul></div><div class="text-center sm:text-left"><h3 class="font-black mb-8 text-blue-400 uppercase tracking-[0.3em] text-[10px]">Learn &amp; Compare</h3><ul class="space-y-4 text-sm font-bold text-gray-400"><li><a class="hover:text-blue-400 flex items-center justify-center sm:justify-start gap-3 uppercase tracking-widest text-[11px]" href="/resources" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-4 h-4 text-blue-500" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>Resources &amp; Blog</a></li><li><a class="hover:text-blue-400 flex items-center justify-center sm:justify-start gap-3 uppercase tracking-widest text-[11px]" href="/comparisons" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-4 h-4 text-emerald-500" aria-hidden="true"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg>Strategy Comparisons</a></li></ul></div><div class="text-center sm:text-left"><h3 class="font-black mb-8 text-blue-400 uppercase tracking-[0.3em] text-[10px]">Legal &amp; Info</h3><ul class="space-y-4 text-sm font-bold text-gray-400"><li><a class="hover:text-white flex items-center justify-center sm:justify-start gap-3" href="/about" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-4 h-4 text-blue-500" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <!-- -->About Us</a></li><li><a class="hover:text-white flex items-center justify-center sm:justify-start gap-3" href="/privacy-policy" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-4 h-4 text-emerald-500" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg> <!-- -->Privacy Policy</a></li><li><a class="hover:text-white flex items-center justify-center sm:justify-start gap-3" href="/terms" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-4 h-4 text-purple-500" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg> <!-- -->Terms of Service</a></li><li><a class="hover:text-white flex items-center justify-center sm:justify-start gap-3" href="/disclaimer" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale w-4 h-4 text-rose-500" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg> <!-- -->Disclaimer</a></li><li><a rel="nofollow" class="hover:text-white flex items-center justify-center sm:justify-start gap-3" href="/admin" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock w-4 h-4 text-amber-400" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <!-- -->Admin</a></li></ul></div><div class="text-center sm:text-left"><h3 class="font-black mb-8 text-blue-400 uppercase tracking-[0.3em] text-[10px]">Founder</h3><div class="bg-white/5 p-6 rounded-[2rem] border border-white/10 shadow-inner"><p class="text-white font-black mb-3 uppercase text-xs tracking-wider">Rahul Kumar</p><a href="mailto:help@smartfintool.com" class="text-gray-400 text-[10px] flex items-center justify-center sm:justify-start gap-3 hover:text-blue-400 transition-all uppercase tracking-[0.2em] font-black italic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-4 h-4" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>help@smartfintool.com</a></div></div></div><div class="bg-red-500/5 border border-red-500/20 rounded-[2.5rem] p-8 mb-16 max-w-5xl mx-auto backdrop-blur-md"><div class="flex flex-col md:flex-row items-center gap-6 text-center sm:text-left"><div class="bg-red-500/20 p-3 rounded-2xl flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert w-8 h-8 text-red-500" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><p class="text-xs text-gray-400 font-bold italic leading-relaxed">Important: Mutual Fund investments are subject to market risks. Calculator outputs are mathematical estimates, not guaranteed returns.</p></div></div><div class="text-center text-gray-600 text-[10px] font-black uppercase tracking-[0.4em] pb-8">2026<!-- --> <!-- -->SMARTFINTOOL<!-- --> INDIA | ALL RIGHTS RESERVED</div></div></footer></div></div>
+
+    <!-- SEO Fallback Content (for crawlers before JS loads) -->
+    </body>
+</html>

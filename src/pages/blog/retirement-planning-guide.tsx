@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const retirementPlanningGuidePost: BlogPost = {
   id: 'retirement-planning-guide',
   title: 'Retirement Planning Guide 2026: Calculate Your Exact Retirement Corpus',
+  seoTitle: 'Retirement Corpus Calculator Guide 2026',
   description: 'Complete step-by-step guide to plan your retirement in India. Learn SWP strategy, inflation adjustment, corpus calculation, and how to create monthly income after retirement.',
   category: 'Financial Planning',
   readTime: 15,

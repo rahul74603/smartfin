@@ -8,7 +8,9 @@ const Privacy = () => (
         <div className="bg-white/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-md">
           <ShieldCheck className="w-8 h-8 text-white" />
         </div>
-        <CardTitle className="text-3xl sm:text-4xl font-black mb-2">Privacy Policy</CardTitle>
+        <CardTitle asChild>
+          <h1 className="text-3xl sm:text-4xl font-black mb-2">Privacy Policy</h1>
+        </CardTitle>
         <p className="text-emerald-100 font-medium italic">Transparent Data Practices for SmartFintool Users</p>
       </CardHeader>
 

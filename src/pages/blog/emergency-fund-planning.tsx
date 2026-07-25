@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const emergencyFundPlanningPost: BlogPost = {
   id: 'emergency-fund-planning',
   title: 'Emergency Fund 2026: Exactly How Much You Need And Where To Keep It',
+  seoTitle: 'Emergency Fund 2026: How Much Do You Need?',
   description: 'Complete guide to build your financial safety net. Calculate your exact emergency fund amount, learn where to keep it for maximum returns, and protect yourself from life\'s uncertainties.',
   category: 'Financial Planning',
   readTime: 10,

@@ -28,7 +28,6 @@
     <meta name="target" content="all" />
     <meta name="rating" content="general" />
     <meta name="distribution" content="global" />
-    <meta name="revisit-after" content="7 days" />
 
     <!-- ── Canonical & Hreflang (App.tsx overrides per page) ────────────── -->
     <link rel="canonical" href="https://smartfintool.com/" />
@@ -44,8 +43,8 @@
     <meta property="og:url" content="https://smartfintool.com/" />
     <meta property="og:title" content="SmartFintool – Free Financial Calculator Platform India" />
     <meta property="og:description" content="Calculate SIP returns, SWP monthly income, Lumpsum growth, and interest projections with SmartFintool. Free, accurate, and India-focused financial planning tools." />
-    <meta property="og:image" content="https://smartfintool.com/banner.png" />
-    <meta property="og:image:secure_url" content="https://smartfintool.com/banner.png" />
+    <meta property="og:image" content="https://smartfintool.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://smartfintool.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="SmartFintool – Free Financial Calculators India" />
@@ -59,15 +58,16 @@
     <meta name="twitter:url" content="https://smartfintool.com/" />
     <meta name="twitter:title" content="SmartFintool – SIP, SWP, Lumpsum Calculators India" />
     <meta name="twitter:description" content="Free SIP, SWP, Lumpsum, Compound and Simple Interest calculators for Indian investors. Plan your financial future with SmartFintool." />
-    <meta name="twitter:image" content="https://smartfintool.com/banner.png" />
+    <meta name="twitter:image" content="https://smartfintool.com/og-image.png" />
     <meta name="twitter:image:alt" content="SmartFintool Financial Calculator India" />
 
     <!-- ── PWA & Icons ──────────────────────────────────────────────────── -->
     <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="SmartFintool" />
@@ -119,7 +119,7 @@
             "width": 192,
             "height": 192
           },
-          "image": "https://smartfintool.com/logo192.png",
+          "image": "https://smartfintool.com/og-image.png",
           "foundingDate": "2024",
           "founder": {
             "@type": "Person",
@@ -214,10 +214,23 @@
         letter-spacing: 0.15em; text-transform: uppercase;
       }
       @keyframes sft-spin { to { transform: rotate(360deg); } }
+      /* Accessibility: keyboard users can jump past the nav. Lighthouse
+         accessibility score feeds into overall page quality signals. */
+      .sft-skip {
+        position: absolute; left: -9999px; top: 0; z-index: 999;
+        background: #2563eb; color: #fff; padding: 12px 20px;
+        font-weight: 700; border-radius: 0 0 8px 0; text-decoration: none;
+      }
+      .sft-skip:focus { left: 0; }
+      @media (prefers-reduced-motion: reduce) {
+        .sft-spinner { animation-duration: 3s; }
+        * { scroll-behavior: auto !important; }
+      }
     </style>
   </head>
 
   <body>
+    <a href="#main-content" class="sft-skip">Skip to main content</a>
     <div id="root">
       <div class="sft-loading" aria-label="Loading SmartFintool" role="status">
         <div class="sft-spinner"></div>

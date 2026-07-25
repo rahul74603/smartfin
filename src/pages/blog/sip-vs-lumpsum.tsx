@@ -4,6 +4,7 @@ import type { BlogPost } from '../../data/blogData';
 export const sipVsLumpsumPost: BlogPost = {
   id: 'sip-vs-lumpsum',
   title: 'SIP vs Lumpsum: Which Investment Strategy Is Best For You In 2026?',
+  seoTitle: 'SIP vs Lumpsum 2026: Which Is Better?',
   description: 'Complete comparison between Systematic Investment Plan (SIP) and Lumpsum investments. Learn pros, cons, returns comparison, and which strategy suits your financial goals in 2026.',
   category: 'Investment Strategy',
   readTime: 12,

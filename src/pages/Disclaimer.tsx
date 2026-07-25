@@ -6,7 +6,9 @@ const Disclaimer = () => (
     <Card className="bg-white shadow-2xl border-none rounded-[2.5rem] overflow-hidden">
       <CardHeader className="bg-red-600 text-white p-8 sm:p-12 text-center">
         <Scale className="w-12 h-12 mx-auto mb-4" />
-        <CardTitle className="text-3xl sm:text-4xl font-black">Financial Disclaimer</CardTitle>
+        <CardTitle asChild>
+          <h1 className="text-3xl sm:text-4xl font-black">Financial Disclaimer</h1>
+        </CardTitle>
         <p className="text-red-100 mt-2">Important Risk Notice for SmartFintool Calculator Users</p>
       </CardHeader>
 

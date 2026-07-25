@@ -1,1 +1,43 @@
+# ── Environment ───────────────────────────────────────────────
 .env
+.env.local
+.env.*.local
+
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+
+# ── Build output ──────────────────────────────────────────────
+# NOTE: `dist/` is intentionally committed because the site is
+# deployed from the built folder. Do not ignore it.
+dist-ssr/
+*.tsbuildinfo
+
+# ── Logs & crash dumps ────────────────────────────────────────
+*.log
+hs_err_pid*.log
+replay_pid*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Editors / OS ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# ── Android build artifacts ───────────────────────────────────
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.idea/
+
+# ── Misc ──────────────────────────────────────────────────────
+*.zip
+!public/**/*.zip
+.vercel
+.netlify
+
+# SSR bundle used only during the prerender step
+dist-ssr/

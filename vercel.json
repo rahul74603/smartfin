@@ -1,0 +1,56 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/simple-interest-calculator", "destination": "/simple", "permanent": true },
+    { "source": "/compound-interest-calculator", "destination": "/compound", "permanent": true },
+    { "source": "/sip-calculator", "destination": "/", "permanent": true },
+    { "source": "/swp-calculator", "destination": "/swp", "permanent": true },
+    { "source": "/lumpsum-calculator", "destination": "/lumpsum", "permanent": true },
+    { "source": "/calculators", "destination": "/", "permanent": true },
+    { "source": "/blog", "destination": "/resources", "permanent": true }
+  ],
+  "headers": [
+    {
+      "comment": "Hashed build assets are immutable — cache them for a year so repeat visits and Googlebot re-crawls cost nothing.",
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "comment": "HTML must revalidate, otherwise updated meta/content stays stale in caches and Google keeps re-reading old titles.",
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+      ]
+    }
+  ]
+}

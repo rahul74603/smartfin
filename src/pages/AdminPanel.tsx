@@ -146,7 +146,15 @@ const AdminPanel = () => {
     () => parseAllowedEmails(import.meta.env.VITE_ADMIN_ALLOWED_EMAILS as string | undefined),
     []
   );
-  const resolvedPassword = configuredPassword || 'admin123';
+  /**
+   * The literal fallback 'admin123' used to apply in production AND the login
+   * screen printed it on-page for every visitor. Anyone hitting /admin could
+   * read the password and sign in. In production there is now no fallback at
+   * all — if VITE_ADMIN_PASSWORD is unset, password login is disabled outright
+   * and only the Google allowlist works.
+   */
+  const resolvedPassword = configuredPassword || (import.meta.env.DEV ? 'admin123' : '');
+  const passwordLoginEnabled = resolvedPassword.length > 0;
   const googleButtonRef = useRef<HTMLDivElement | null>(null);
   const [authUser, setAuthUser] = useState<AdminAuthUser | null>(() => readAuthSession());
 
@@ -187,7 +195,7 @@ const AdminPanel = () => {
       setAuthUser(sessionUser);
       setAuthError('');
       setPassword('');
-    } catch (error: any) {
+    } catch (error: unknown) {
       setAuthError('Google login failed. Please try again.');
       console.error(error);
     } finally {
@@ -262,6 +270,10 @@ const AdminPanel = () => {
 
   const handleLogin = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!passwordLoginEnabled) {
+      setAuthError('Password login is disabled. Please sign in with Google.');
+      return;
+    }
     if (password === resolvedPassword) {
       const sessionUser: AdminAuthUser = { provider: 'password' };
       persistAuthSession(sessionUser);
@@ -380,9 +392,16 @@ const AdminPanel = () => {
 
             <div className="border-t border-slate-200 pt-5 space-y-3">
               <p className="text-sm font-semibold text-slate-700">Password Fallback</p>
-              {!configuredPassword && (
+              {!configuredPassword && import.meta.env.DEV && (
                 <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-                  <code>VITE_ADMIN_PASSWORD</code> not set. Temporary password: <code>admin123</code>.
+                  <code>VITE_ADMIN_PASSWORD</code> not set. Dev-only fallback password:{' '}
+                  <code>admin123</code>. Set the env var before deploying.
+                </div>
+              )}
+              {!configuredPassword && !import.meta.env.DEV && (
+                <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-900">
+                  Admin password is not configured. Set <code>VITE_ADMIN_PASSWORD</code> in your
+                  hosting environment and redeploy.
                 </div>
               )}
 
