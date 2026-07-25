@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SmartFintool</string>
+    <string name="title_activity_main">SmartFintool</string>
+    <string name="package_name">com.rahul74603.smartfintool</string>
+    <string name="custom_url_scheme">com.rahul74603.smartfintool</string>
+</resources>

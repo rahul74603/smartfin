@@ -1,0 +1,242 @@
+/* App-specific styles */
+
+/* Smooth transitions for all interactive elements */
+button, input, select, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Mobile responsiveness enhancements */
+@media (max-width: 768px) {
+  .calculator-card {
+    margin: 0 -0.5rem;
+  }
+  
+  input[type="range"] {
+    height: 8px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Increase input sizes on mobile */
+  input[type="number"] {
+    font-size: 1.125rem !important;
+    padding: 0.75rem !important;
+    min-height: 2.5rem !important;
+  }
+}
+
+/* Calculator card enhancements */
+.calculator-card {
+  border: 1px solid rgba(30, 58, 138, 0.1);
+}
+
+/* Range slider custom styling for different accents */
+input[type="range"].accent-purple-600::-webkit-slider-thumb {
+  background: #9333ea;
+}
+
+input[type="range"].accent-emerald-600::-webkit-slider-thumb {
+  background: #059669;
+}
+
+input[type="range"].accent-rose-600::-webkit-slider-thumb {
+  background: #e11d48;
+}
+
+input[type="range"].accent-indigo-600::-webkit-slider-thumb {
+  background: #4f46e5;
+}
+
+/* Focus states for inputs */
+input:focus {
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* Result cards animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Print styles */
+@media print {
+  header, footer, .affiliate-section {
+    display: none;
+  }
+  
+  .calculator-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .calculator-card {
+    border-width: 2px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    border-width: 4px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(30, 58, 138, 0.25);
+}
+
+/* Button press effect */
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+/* Input number styling */
+input[type="number"] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Loading state for buttons */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive base font size adjustments */
+/* Mobile: increase base font size to make content more readable */
+@media (max-width: 640px) {
+  html {
+    font-size: 120%; /* 19.2px base */
+  }
+}
+
+/* Desktop: decrease base font size to make content less overwhelming */
+@media (min-width: 1024px) {
+  html {
+    font-size: 90%; /* 14.4px base */
+  }
+}
+
+/* Mobile-specific calculator enhancements */
+@media (max-width: 640px) {
+  /* Increase input sizes for better touch and readability */
+  .calculator-card input[type="number"] {
+    font-size: 1.1rem !important;
+    padding: 0.8rem !important;
+    min-height: 2.8rem !important;
+  }
+  
+/* Increase label text size */
+.calculator-card .flex.justify-between.items-center[class*="text-[10px]"] {
+  font-size: 0.9rem !important;
+}
+  
+  /* Increase slider height and thumb size */
+  input[type="range"] {
+    height: 10px !important;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  
+  /* Adjust calculator card margins for full width */
+  .calculator-card {
+    margin: 0 -0.75rem !important;
+  }
+}
