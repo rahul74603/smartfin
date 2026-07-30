@@ -14,8 +14,17 @@ import {
   Scale,
   User,
   Lock,
+  Menu,
 } from 'lucide-react';
 import { Tabs, TabsContent } from '@/components/ui/tabs';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetClose,
+} from '@/components/ui/sheet';
 import './App.css';
 
 import SIPCalculator from './components/SIPCalculator';
@@ -449,7 +458,7 @@ function App() {
 
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[#f8fafc] pb-20 md:pb-0 font-inter text-[#0f172a]">
+    <div className="min-h-screen bg-[#f8fafc] pb-24 md:pb-0 font-inter text-[#0f172a]">
 
       {/* ══ HEADER ═══════════════════════════════════════════════════════════ */}
       <header className="bg-[#0f172a] text-white sticky top-0 z-50 border-b border-white/5 shadow-2xl backdrop-blur-md bg-opacity-95">
@@ -537,6 +546,147 @@ function App() {
               ))}
             </div>
           </nav>
+
+          {/* ══ Mobile Menu Trigger + Drawer ══ */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                type="button"
+                className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-white/5 border border-white/10 text-white active:scale-95 transition-transform"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-[86%] max-w-[360px] bg-white text-[#0f172a] border-slate-200 p-0 flex flex-col"
+            >
+              <SheetHeader className="flex-row items-center justify-between border-b border-slate-100 p-5 m-0">
+                <SheetTitle className="text-base font-black tracking-tight flex items-center gap-2">
+                  <Calculator className="w-5 h-5 text-blue-600" />
+                  {adminSettings.brand.siteName}
+                </SheetTitle>
+              </SheetHeader>
+
+              <div className="flex-1 overflow-y-auto p-4 space-y-6">
+                {/* Calculators */}
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-2 px-2">
+                    Calculators
+                  </p>
+                  <div className="grid grid-cols-1 gap-1.5">
+                    {coreCalculators.map((id) => (
+                      <SheetClose asChild key={id}>
+                        <Link
+                          to={pathForCalculator(id)}
+                          aria-current={activeTab === id ? 'page' : undefined}
+                          className={`flex items-center gap-3 rounded-2xl px-3 py-3 font-black uppercase tracking-widest text-xs transition-colors ${
+                            activeTab === id
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-slate-50 text-slate-700 hover:bg-slate-100'
+                          }`}
+                        >
+                          <span
+                            className={`inline-flex p-2 rounded-xl bg-gradient-to-br text-white ${calcMeta[id].gradient}`}
+                          >
+                            {mobileNavIcon[id]}
+                          </span>
+                          {calcMeta[id].label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Planning Tools */}
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-600 mb-2 px-2">
+                    Planning Tools
+                  </p>
+                  <div className="grid grid-cols-1 gap-1.5">
+                    {TOOL_NAV.map((t) => (
+                      <SheetClose asChild key={t.path}>
+                        <Link
+                          to={t.path}
+                          className="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
+                        >
+                          <span className="inline-flex w-8 justify-center text-emerald-600">
+                            <Calculator className="w-4 h-4" />
+                          </span>
+                          {t.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Learn & Compare */}
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-purple-600 mb-2 px-2">
+                    Learn &amp; Compare
+                  </p>
+                  <div className="grid grid-cols-1 gap-1.5">
+                    <SheetClose asChild>
+                      <Link
+                        to="/resources"
+                        className="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
+                      >
+                        <FileText className="w-4 h-4 text-blue-500" />
+                        Resources &amp; Blog
+                      </Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link
+                        to="/comparisons"
+                        className="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
+                      >
+                        <TrendingUp className="w-4 h-4 text-emerald-500" />
+                        Strategy Comparisons
+                      </Link>
+                    </SheetClose>
+                  </div>
+                </div>
+
+                {/* Legal & Info */}
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-2 px-2">
+                    Legal &amp; Info
+                  </p>
+                  <div className="grid grid-cols-1 gap-1.5">
+                    {[
+                      { path: '/about', icon: <User className="w-4 h-4 text-blue-500" />, label: 'About Us' },
+                      { path: '/privacy-policy', icon: <ShieldCheck className="w-4 h-4 text-emerald-500" />, label: 'Privacy Policy' },
+                      { path: '/terms', icon: <FileText className="w-4 h-4 text-purple-500" />, label: 'Terms of Service' },
+                      { path: '/disclaimer', icon: <Scale className="w-4 h-4 text-rose-500" />, label: 'Disclaimer' },
+                    ].map((link) => (
+                      <SheetClose asChild key={link.path}>
+                        <Link
+                          to={link.path}
+                          className="flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-bold text-slate-700 bg-slate-50 hover:bg-slate-100 transition-colors"
+                        >
+                          {link.icon}
+                          {link.label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-slate-100 p-4">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                  {adminSettings.brand.founderName}
+                </p>
+                <a
+                  href={`mailto:${adminSettings.brand.supportEmail}`}
+                  className="text-[11px] text-slate-500 hover:text-blue-600 transition-colors break-all"
+                >
+                  {adminSettings.brand.supportEmail}
+                </a>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 
@@ -598,7 +748,7 @@ function App() {
           <>
             {/* Hero */}
             <section
-              className="relative overflow-hidden bg-[#0f172a] text-white py-16 sm:py-24 rounded-[3.5rem] mb-16 shadow-2xl border border-white/5"
+              className="relative overflow-hidden bg-[#0f172a] text-white py-12 sm:py-24 rounded-[2rem] sm:rounded-[3.5rem] mb-12 sm:mb-16 shadow-2xl border border-white/5"
               aria-label="Financial calculator selection"
             >
               <div className="absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
@@ -611,7 +761,7 @@ function App() {
                   </span>
                 </div>
 
-                <h1 className="text-5xl sm:text-8xl font-black mb-8 tracking-tighter leading-[1.1]">
+                <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black mb-6 sm:mb-8 tracking-tighter leading-[1.1]">
                   {activeTab === 'sip' && 'Free SIP'}
                   {activeTab === 'swp' && 'Free SWP'}
                   {activeTab === 'compound' && 'Compound Interest'}
@@ -650,6 +800,35 @@ function App() {
                           {meta.icon}
                         </div>
                         <span className="block text-[11px] font-black uppercase tracking-[0.2em] text-white">
+                          {id}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                {/* Calculator Picker – mobile (horizontal scroll) */}
+                <div className="-mx-4 px-4 mt-10 md:hidden flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+                  {coreCalculators.map((id) => {
+                    const meta = calcMeta[id];
+                    return (
+                      <Link
+                        key={id}
+                        to={pathForCalculator(id)}
+                        aria-label={`Switch to ${meta.label}`}
+                        aria-current={activeTab === id ? 'page' : undefined}
+                        className={`snap-start shrink-0 w-[136px] flex flex-col items-center gap-3 p-5 rounded-3xl border transition-all ${
+                          activeTab === id
+                            ? 'bg-white/10 border-white/20 shadow-2xl ring-2 ring-blue-500/50'
+                            : 'bg-[#1e293b]/40 border-white/5'
+                        }`}
+                      >
+                        <div
+                          className={`inline-flex p-4 rounded-2xl bg-gradient-to-br shadow-xl ${meta.gradient}`}
+                        >
+                          {meta.icon}
+                        </div>
+                        <span className="block text-[10px] font-black uppercase tracking-[0.2em] text-white">
                           {id}
                         </span>
                       </Link>
@@ -917,29 +1096,28 @@ function App() {
         </div>
       </footer>
 
-      {/* ══ MOBILE BOTTOM NAV ════════════════════════════════════════════════ */}
-      {isCalculatorPage && (
-        <nav
-          className="lg:hidden fixed bottom-6 left-6 right-6 bg-[#0f172a] border border-white/10 flex justify-around items-center px-4 py-4 z-50 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl bg-opacity-95 ring-1 ring-white/10"
-          aria-label="Mobile calculator navigation"
-        >
-          {coreCalculators.map((id) => (
-            <Link
-              key={id}
-              to={pathForCalculator(id)}
-              aria-label={calcMeta[id].label}
-              aria-current={activeTab === id ? 'page' : undefined}
-              className={`flex flex-col items-center p-3 rounded-2xl transition-all ${
-                activeTab === id
-                  ? 'bg-blue-600 text-white scale-110 shadow-2xl shadow-blue-600/40'
-                  : 'text-gray-500 hover:text-white'
-              }`}
-            >
-              {mobileNavIcon[id]}
-            </Link>
-          ))}
-        </nav>
-      )}
+      {/* ══ MOBILE BOTTOM TAB BAR ══════════════════════════════════════════ */}
+      <nav
+        className="lg:hidden fixed inset-x-0 bottom-0 z-50 flex items-stretch justify-around bg-[#0f172a]/95 backdrop-blur-2xl border-t border-white/10 px-1 pb-[env(safe-area-inset-bottom)]"
+        aria-label="Mobile navigation"
+      >
+        {coreCalculators.map((id) => (
+          <Link
+            key={id}
+            to={pathForCalculator(id)}
+            aria-label={calcMeta[id].label}
+            aria-current={activeTab === id ? 'page' : undefined}
+            className={`flex flex-1 flex-col items-center justify-center gap-1 py-2.5 transition-colors ${
+              activeTab === id ? 'text-blue-400' : 'text-gray-500'
+            }`}
+          >
+            {mobileNavIcon[id]}
+            <span className="text-[9px] font-black uppercase tracking-wider leading-none">
+              {id}
+            </span>
+          </Link>
+        ))}
+      </nav>
     </div>
   );
 }
