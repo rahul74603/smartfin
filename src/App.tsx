@@ -112,11 +112,11 @@ const TOOL_NAV = [
 
 // ─── Mobile Nav Icons ─────────────────────────────────────────────────────────
 const mobileNavIcon: Record<string, React.ReactNode> = {
-  sip: <TrendingUp className="w-6 h-6" />,
-  swp: <Wallet className="w-6 h-6" />,
-  compound: <PieChart className="w-6 h-6" />,
-  simple: <Calculator className="w-6 h-6" />,
-  lumpsum: <IndianRupee className="w-6 h-6" />,
+  sip: <TrendingUp className="w-5 h-5" />,
+  swp: <Wallet className="w-5 h-5" />,
+  compound: <PieChart className="w-5 h-5" />,
+  simple: <Calculator className="w-5 h-5" />,
+  lumpsum: <IndianRupee className="w-5 h-5" />,
 };
 
 // ─── SEO Data Per Route ───────────────────────────────────────────────────────
