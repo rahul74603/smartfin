@@ -168,7 +168,7 @@ const SimpleInterestCalculator = () => {
   }), [principal, result.interest]);
 
   return (
-    <article className="space-y-16 pb-32 font-inter max-w-7xl mx-auto px-4">
+    <article className="space-y-12 sm:space-y-16 pb-20 sm:pb-32 font-inter max-w-7xl mx-auto px-4">
       
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="text-sm text-gray-600 pt-6">
@@ -320,7 +320,7 @@ const SimpleInterestCalculator = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-2xl border-none rounded-[3rem] bg-[#0f172a] text-white p-10 flex flex-col justify-center" id="si-results">
+            <Card className="shadow-2xl border-none rounded-[2.5rem] sm:rounded-[3rem] bg-[#0f172a] text-white p-6 sm:p-10 flex flex-col justify-center" id="si-results">
               <div className="text-center space-y-8">
                 <div>
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Total Interest</p>

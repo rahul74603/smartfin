@@ -121,7 +121,7 @@ const SIPCalculator = () => {
   }), [result.investedAmount, result.estimatedReturns]);
 
   return (
-    <article className="space-y-24 pb-32 font-inter max-w-7xl mx-auto px-4">
+    <article className="space-y-12 sm:space-y-24 pb-20 sm:pb-32 font-inter max-w-7xl mx-auto px-4">
       
       {/* Breadcrumb (Visual only - schema handled in App.tsx) */}
       <nav aria-label="Breadcrumb" className="text-sm text-gray-600 -mb-16 pt-6">
@@ -161,7 +161,7 @@ const SIPCalculator = () => {
                 Smart Wealth Planning by Rahul Kumar
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-8 space-y-12">
+            <CardContent className="p-5 sm:p-8 space-y-6 sm:space-y-12">
               {/* Monthly Investment */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
@@ -310,7 +310,7 @@ const SIPCalculator = () => {
           </Card>
 
           {/* RESULT CARD - Preserved Premium Design */}
-          <Card className="shadow-2xl border-none rounded-[3rem] bg-[#0f172a] text-white p-10 overflow-hidden relative flex flex-col justify-center" id="sip-results">
+          <Card className="shadow-2xl border-none rounded-[2.5rem] sm:rounded-[3rem] bg-[#0f172a] text-white p-6 sm:p-10 overflow-hidden relative flex flex-col justify-center" id="sip-results">
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="relative z-10 space-y-10">
               <div className="text-center space-y-4">

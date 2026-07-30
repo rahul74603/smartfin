@@ -119,7 +119,7 @@ const SWPCalculator = () => {
   }), [result.yearlyData]);
 
   return (
-    <article className="space-y-16 pb-32 font-inter max-w-7xl mx-auto px-4">
+    <article className="space-y-12 sm:space-y-16 pb-20 sm:pb-32 font-inter max-w-7xl mx-auto px-4">
       
       {/* Breadcrumb (Visual only - schema handled in App.tsx) */}
       <nav aria-label="Breadcrumb" className="text-sm text-gray-600 pt-6">
@@ -304,7 +304,7 @@ const SWPCalculator = () => {
           </Card>
 
           {/* RESULT CARD - Preserved Premium Design */}
-          <Card className="shadow-2xl border-none rounded-[3rem] bg-[#0f172a] text-white p-10 flex flex-col justify-center text-center space-y-8" id="swp-results">
+          <Card className="shadow-2xl border-none rounded-[2.5rem] sm:rounded-[3rem] bg-[#0f172a] text-white p-6 sm:p-10 flex flex-col justify-center text-center space-y-6 sm:space-y-8" id="swp-results">
             <div className="space-y-2">
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Total Amount Withdrawn</p>
               <p className="text-5xl sm:text-7xl font-black text-emerald-400">{formatCurrency(result.totalWithdrawn)}</p>
